@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Companies - AXSYNTHE Group</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #0066cc;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0d2f62;
+        }
+        
+        .logo span {
+            color: #2a9df4;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #2a9df4;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Page header */
+        .page-header {
+            background: linear-gradient(135deg, #0d2f62 0%, #1e5799 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .page-header p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Button styles */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #2a9df4;
+            color: white;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #0d86e0;
+        }
+        
+        /* Company showcase */
+        .company-showcase {
+            padding: 80px 0;
+        }
+        
+        .company-showcase:nth-child(even) {
+            background-color: #f0f5ff;
+        }
+        
+        .company-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .company-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .company-text h2 {
+            font-size: 32px;
+            color: #0d2f62;
+            margin-bottom: 20px;
+        }
+        
+        .company-text h3 {
+            font-size: 20px;
+            color: #2a9df4;
+            margin-bottom: 15px;
+        }
+        
+        .company-text p {
+            margin-bottom: 15px;
+        }
+        
+        .service-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .service-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .service-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2a9df4;
+            font-weight: bold;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #0d2f62;
+            color: white;
+            padding: 40px 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #2a9df4;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ddd;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #2a9df4;
+        }
+        
+        .copyright {
+            margin-top: 40px;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .company-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .company-image {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .page-header h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">AX<span>SYNTHE</span> Group</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="companies.html">Our Companies</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">☰</div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Companies</h1>
+            <p>Specialized teams delivering excellence in their respective domains</p>
+        </div>
+    </section>
+    
+    <!-- Dev.Ora -->
+    <section class="company-showcase" id="devora">
+        <div class="container">
+            <div class="company-content">
+                <div class="company-text">
+                    <h2>Dev.Ora</h2>
+                    <h3>Professional Website Development & Design</h3>
+                    <p>Dev.Ora specializes in creating beautiful, functional, and responsive websites that elevate your brand's online presence. Our team of experienced developers and designers work together to deliver custom website solutions that drive results for businesses of all sizes.</p>
+                    <p>From simple landing pages to complex e-commerce platforms, we combine technical expertise with creative design to build websites that engage visitors and convert them into customers.</p>
+                    <h3>Our Services</h3>
+                    <ul class="service-list">
+                        <li>Custom Website Development</li>
+                        <li>E-commerce Solutions</li>
+                        <li>Content Management Systems</li>
+                        <li>Web Application Development</li>
+                        <li>Website Maintenance & Support</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                    <a href="devora.html" class="btn">Learn More</a>
+                </div>
+                <div class="company-image">
+                    <img src="https://via.placeholder.com/600x400" alt="Dev.Ora">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Edvana -->
+    <section class="company-showcase" id="edvana">
+        <div class="container">
+            <div class="company-content">
+                <div class="company-image">
+                    <img src="https://via.placeholder.com/600x400" alt="Edvana">
+                </div>
+                <div class="company-text">
+                    <h2>Edvana</h2>
+                    <h3>Mobile App Development & Design</h3>
+                    <p>Edvana transforms your ideas into powerful, user-friendly mobile applications for iOS and Android platforms. Our skilled developers combine technical expertise with intuitive design to create apps that users love and businesses rely on.</p>
+                    <p>Whether you need a consumer-facing app or an enterprise solution, we focus on delivering high-performance applications with seamless user experiences that drive engagement and results.</p>
+                    <h3>Our Services</h3>
+                    <ul class="service-list">
+                        <li>Native iOS & Android Development</li>
+                        <li>Cross-platform App Development</li>
+                        <li>UI/UX Design for Mobile</li>
+                        <li>App Testing & Quality Assurance</li>
+                        <li>App Maintenance & Updates</li>
+                        <li>Enterprise Mobile Solutions</li>
+                    </ul>
+                    <a href="edvana.html" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- TutoriQ -->
+    <section class="company-showcase" id="tutoriq">
+        <div class="container">
+            <div class="company-content">
+                <div class="company-text">
+                    <h2>TutoriQ</h2>
+                    <h3>Comprehensive Education Platform</h3>
+                    <p>TutoriQ is dedicated to making quality education accessible through our comprehensive learning platform. We offer both short-term and long-term courses designed to help individuals and organizations develop new skills, expand knowledge, and achieve professional growth.</p>
+                    <p>Our courses are developed by industry experts and educators who bring real-world experience and academic excellence to our curriculum, ensuring that learners gain practical skills they can apply immediately.</p>
+                    <h3>Our Services</h3>
+                    <ul class="service-list">
+                        <li>Short-term Professional Courses</li>
+                        <li>Long-term Certification Programs</li>
+                        <li>Corporate Training Solutions</li>
+                        <li>Live Interactive Workshops</li>
+                        <li>Self-paced Learning Modules</li>
+                        <li>Customized Learning Paths</li>
+                    </ul>
+                    <a href="tutoriq.html" class="btn">Learn More</a>
+                </div>
+                <div class="company-image">
+                    <img src="https://via.placeholder.com/600x400" alt="TutoriQ">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pixora -->
+    <section class="company-showcase" id="pixora">
+        <div class="container">
+            <div class="company-content">
+                <div class="company-image">
+                    <img src="https://via.placeholder.com/600x400" alt="Pixora">
+                </div>
+                <div class="company-text">
+                    <h2>Pixora</h2>
+                    <h3>Photography & Videography Services</h3>
+                    <p>Pixora captures moments and tells stories through professional photography and videography. Our creative team specializes in producing high-quality visual content that showcases your brand, products, events, and services in the best possible light.</p>
+                    <p>From corporate events to product photography, marketing videos to documentaries, we combine technical skill with artistic vision to create compelling visual content that engages and inspires your audience.</p>
+                    <h3>Our Services</h3>
+                    <ul class="service-list">
+                        <li>Commercial Photography</li>
+                        <li>Event Coverage</li>
+                        <li>Product Photography</li>
+                        <li>Corporate Videos</li>
+                        <li>Marketing & Promotional Videos</li>
+                        <li>Drone Photography & Videography</li>
+                    </ul>
+                    <a href="pixora.html" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Evontis -->
+    <section class="company-showcase" id="evontis">
+        <div class="container">
+            <div class="company-content">
+                <div class="company-text">
+                    <h2>Evontis</h2>
+                    <h3>Event Planning & Management</h3>
+                    <p>Evontis specializes in planning and executing memorable events that leave lasting impressions. Our experienced team handles every aspect of event management, from initial concept development to seamless execution, ensuring that your vision comes to life exactly as you imagined.</p>
+                    <p>Whether you're hosting a corporate conference, product launch, private celebration, or large-scale festival, we bring creativity, attention to detail, and flawless logistics to make your event a success.</p>
+                    <h3>Our Services</h3>
+                    <ul class="service-list">
+                        <li>Corporate Events & Conferences</li>
+                        <li>Product Launches</li>
+                        <li>Team Building Activities</li>
+                        <li>Trade Shows & Exhibitions</li>
+                        <li>Private Celebrations</li>
+                        <li>Virtual & Hybrid Events</li>
+                    </ul>
+                    <a href="evontis.html" class="btn">Learn More</a>
+                </div>
+                <div class="company-image">
+                    <img src="https://via.placeholder.com/600x400" alt="Evontis">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Creovis -->
+    <section class="company-showcase" id="creovis">
+        <div class="container">
+            <div class="company-content">
+                <div class="company-image">
+                    <img src="https://via.placeholder.com/600x400" alt="Creovis">
+                </div>
+                <div class="company-text">
+                    <h2>Creovis</h2>
+                    <h3>Creative Graphic Design</h3>
+                    <p>Creovis transforms ideas into captivating visual designs that communicate your brand's message effectively. Our creative team combines artistic talent with strategic thinking to develop visual assets that stand out in today's competitive marketplace.</p>
+                    <p>From brand identity development to marketing collateral, digital assets to print materials, we create designs that not only look beautiful but also serve your business objectives and connect with your target audience.</p>
+                    <h3>Our Services</h3>
+                    <ul class="service-list">
+                        <li>Brand Identity & Logo Design</li>
+                        <li>Marketing Materials</li>
+                        <li>Packaging Design</li>
+                        <li>Social Media Graphics</li>
+                        <li>User Interface Design</li>
+                        <li>Print & Digital Publication Design</li>
+                    </ul>
+                    <a href="creovis.html" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- LedGrix -->
+    <section class="company-showcase" id="ledgrix">
+        <div class="container">
+            <div class="company-content">
+                <div class="company-text">
+                    <h2>LedGrix</h2>
+                    <h3>Company Audit & Financial Management</h3>
+                    <p>LedGrix provides comprehensive audit and financial management services to help businesses maintain financial health, ensure compliance, and make informed strategic decisions. Our team of experienced professionals brings expertise and integrity to every engagement.</p>
+                    <p>From detailed financial audits to ongoing accounting support, tax planning to financial consulting, we deliver services that help organizations understand their financial position, identify opportunities for improvement, and plan for sustainable growth.</p>
+                    <h3>Our Services</h3>
+                    <ul class="service-list">
+                        <li>Financial Audits</li>
+                        <li>Compliance Reviews</li>
+                        <li>Internal Control Assessment</li>
+                        <li>Financial Statement Preparation</li>
+                        <li>Tax Planning & Compliance</li>
+                        <li>Business Financial Consulting</li>
+                    </ul>
+                    <a href="ledgrix.html" class="btn">Learn More</a>
+                </div>
+                <div class="company-image">
+                    <img src="https://via.placeholder.com/600x400" alt="LedGrix">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>AXSYNTHE Group</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="career.html">Careers</a></li>
+                        <li><a href="news.html">News & Updates</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Companies</h3>
+                    <ul>
+                        <li><a href="devora.html">Dev.Ora</a></li>
+                        <li><a href="edvana.html">Edvana</a></li>
+                        <li><a href="tutoriq.html">TutoriQ</a></li>
+                        <li><a href="pixora.html">Pixora</a></li>
+                        <li><a href="evontis.html">Evontis</a></li>
+                        <li><a href="creovis.html">Creovis</a></li>
+                        <li><a href="ledgrix.html">LedGrix</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html#web">Web Development</a></li>
+                        <li><a href="services.html#mobile">Mobile Apps</a></li>
+                        <li><a href="services.html#education">Education</a></li>
+                        <li><a href="services.html#media">Media Production</a></li>
+                        <li><a href="services.html#events">Event Planning</a></li>
+                        <li><a href="services.html#design">Graphic Design</a></li>
+                        <li><a href="services.html#audit">Company Audit</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect with Us</h3>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 AXSYNTHE Group PVT (Ltd). All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const nav = document.querySelector('nav ul');
+            if (nav.style.display === 'flex') {
+                nav.style.display = 'none';
+            } else {
+                nav.style.display = 'flex';
+            }
+        });
+    </script>
+</body>
+</html>
