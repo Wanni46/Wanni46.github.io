@@ -1,1 +1,609 @@
-Hello World!
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AXSYNTHE GROUP - Innovation Across Industries</title>
+    <style>
+      /* Reset and base styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        color: #333;
+        line-height: 1.6;
+        background-color: #f8f9fa;
+      }
+
+      a {
+        text-decoration: none;
+        color: #0066cc;
+      }
+
+      /* Header styles */
+      header {
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: 700;
+        color: #0d2f62;
+      }
+
+      .logo span {
+        color: #2a9df4;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li {
+        margin-left: 30px;
+      }
+
+      nav ul li a {
+        color: #333;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #2a9df4;
+      }
+
+      .mobile-menu {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      /* Hero section */
+      .hero {
+        padding: 100px 0;
+        background: linear-gradient(135deg, #0d2f62 0%, #1e5799 100%);
+        color: white;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+      }
+
+      .hero p {
+        font-size: 20px;
+        max-width: 700px;
+        margin: 0 auto 30px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: #2a9df4;
+        color: white;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: background-color 0.3s;
+      }
+
+      .btn:hover {
+        background-color: #0d86e0;
+      }
+
+      /* Companies section */
+      .companies {
+        padding: 80px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-title h2 {
+        font-size: 36px;
+        color: #0d2f62;
+        margin-bottom: 15px;
+      }
+
+      .section-title p {
+        font-size: 18px;
+        max-width: 600px;
+        margin: 0 auto;
+        color: #666;
+      }
+
+      .companies-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .company-card {
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .company-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .company-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .company-content {
+        padding: 25px;
+      }
+
+      .company-content h3 {
+        font-size: 22px;
+        margin-bottom: 15px;
+        color: #0d2f62;
+      }
+
+      .company-content p {
+        color: #666;
+        margin-bottom: 20px;
+      }
+
+      /* About section */
+      .about {
+        padding: 80px 0;
+        background-color: #f0f5ff;
+      }
+
+      .about-content {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .about-text {
+        flex: 1;
+      }
+
+      .about-text h2 {
+        font-size: 36px;
+        color: #0d2f62;
+        margin-bottom: 20px;
+      }
+
+      .about-text p {
+        margin-bottom: 15px;
+        font-size: 16px;
+      }
+
+      .about-image {
+        flex: 1;
+      }
+
+      .about-image img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Contact section */
+      .contact {
+        padding: 80px 0;
+      }
+
+      .contact-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+      }
+
+      .contact-info h3 {
+        font-size: 24px;
+        color: #0d2f62;
+        margin-bottom: 20px;
+      }
+
+      .contact-info p {
+        margin-bottom: 15px;
+      }
+
+      .contact-info i {
+        margin-right: 10px;
+        color: #2a9df4;
+      }
+
+      .contact-form .form-group {
+        margin-bottom: 20px;
+      }
+
+      .contact-form label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 500;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+
+      .contact-form textarea {
+        height: 150px;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #0d2f62;
+        color: white;
+        padding: 40px 0;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+      }
+
+      .footer-column h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        color: #2a9df4;
+      }
+
+      .footer-column ul {
+        list-style: none;
+      }
+
+      .footer-column ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer-column ul li a {
+        color: #ddd;
+        transition: color 0.3s;
+      }
+
+      .footer-column ul li a:hover {
+        color: #2a9df4;
+      }
+
+      .copyright {
+        margin-top: 40px;
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* Responsive styles */
+      @media (max-width: 992px) {
+        .about-content {
+          flex-direction: column;
+        }
+
+        .contact-content {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        nav ul {
+          display: none;
+        }
+
+        .mobile-menu {
+          display: block;
+        }
+
+        .hero h1 {
+          font-size: 36px;
+        }
+
+        .hero p {
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container nav-container">
+        <a href="index.html" class="logo">AX<span>SYNTHE</span> GROUP</a>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="companies.html">Our Companies</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="mobile-menu">☰</div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Innovation Across Industries</h1>
+        <p>
+          AXSYNTHE Group brings together specialized companies to deliver
+          comprehensive solutions in technology, design, education, and business
+          services.
+        </p>
+        <a href="companies.html" class="btn">Discover Our Companies</a>
+      </div>
+    </section>
+
+    <!-- Companies Section -->
+    <section class="companies">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Companies</h2>
+          <p>
+            Specialized teams delivering excellence in their respective domains
+          </p>
+        </div>
+        <div class="companies-grid">
+          <div class="company-card">
+            <img src="/api/placeholder/400/300" alt="Dev.Ora" />
+            <div class="company-content">
+              <h3>Dev.Ora</h3>
+              <p>
+                Professional website development and design services tailored to
+                your business needs.
+              </p>
+              <a href="devora.html" class="btn">Learn More</a>
+            </div>
+          </div>
+          <div class="company-card">
+            <img src="/api/placeholder/400/300" alt="Edvana" />
+            <div class="company-content">
+              <h3>Edvana</h3>
+              <p>
+                Creating intuitive and powerful mobile applications for iOS and
+                Android platforms.
+              </p>
+              <a href="edvana.html" class="btn">Learn More</a>
+            </div>
+          </div>
+          <div class="company-card">
+            <img src="/api/placeholder/400/300" alt="TutoriQ" />
+            <div class="company-content">
+              <h3>TutoriQ</h3>
+              <p>
+                Comprehensive education platform offering short and long-term
+                professional courses.
+              </p>
+              <a href="tutoriq.html" class="btn">Learn More</a>
+            </div>
+          </div>
+          <div class="company-card">
+            <img src="/api/placeholder/400/300" alt="Pixora" />
+            <div class="company-content">
+              <h3>Pixora</h3>
+              <p>
+                Professional photography and videography services for events,
+                marketing, and more.
+              </p>
+              <a href="pixora.html" class="btn">Learn More</a>
+            </div>
+          </div>
+          <div class="company-card">
+            <img src="/api/placeholder/400/300" alt="Evontis" />
+            <div class="company-content">
+              <h3>Evontis</h3>
+              <p>
+                Full-service event planning and management for corporate and
+                private events.
+              </p>
+              <a href="evontis.html" class="btn">Learn More</a>
+            </div>
+          </div>
+          <div class="company-card">
+            <img src="/api/placeholder/400/300" alt="Creovis" />
+            <div class="company-content">
+              <h3>Creovis</h3>
+              <p>
+                Creative graphic design services for branding, marketing
+                materials, and digital assets.
+              </p>
+              <a href="creovis.html" class="btn">Learn More</a>
+            </div>
+          </div>
+          <div class="company-card">
+            <img src="/api/placeholder/400/300" alt="LedGrix" />
+            <div class="company-content">
+              <h3>LedGrix</h3>
+              <p>
+                Comprehensive company audit processes and financial management
+                services.
+              </p>
+              <a href="ledgrix.html" class="btn">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-text">
+            <h2>About AXSYNTHE Group</h2>
+            <p>
+              AXSYNTHE Group PVT (Ltd) is a diversified collective of
+              specialized companies, each excelling in their respective domains
+              while working together to provide comprehensive solutions for
+              businesses and individuals.
+            </p>
+            <p>
+              Our mission is to empower organizations through innovation,
+              creativity, and technology. We believe in the power of specialized
+              expertise, which is why we've created focused companies that are
+              leaders in their fields.
+            </p>
+            <p>
+              From digital solutions to creative services and business
+              operations, the AXSYNTHE Group ecosystem is designed to meet all
+              your professional needs with excellence and integrity.
+            </p>
+            <a href="about.html" class="btn">Learn More About Us</a>
+          </div>
+          <div class="about-image">
+            <img src="/api/placeholder/600/400" alt="AXSYNTHE Group Team" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>Get In Touch</h2>
+          <p>Let's discuss how AXSYNTHE Group can help your business succeed</p>
+        </div>
+        <div class="contact-content">
+          <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p><i>📍</i> 123 Business Avenue, Tech District, City</p>
+            <p><i>📞</i> +1 234 567 8900</p>
+            <p><i>✉️</i> info@axsynthegroup.me</p>
+            <h3>Working Hours</h3>
+            <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+            <p>Saturday: 10:00 AM - 2:00 PM</p>
+            <p>Sunday: Closed</p>
+          </div>
+          <div class="contact-form">
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+              </div>
+              <button type="submit" class="btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>AXSYNTHE Group</h3>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="career.html">Careers</a></li>
+              <li><a href="news.html">News & Updates</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Our Companies</h3>
+            <ul>
+              <li><a href="devora.html">Dev.Ora</a></li>
+              <li><a href="edvana.html">Edvana</a></li>
+              <li><a href="tutoriq.html">TutoriQ</a></li>
+              <li><a href="pixora.html">Pixora</a></li>
+              <li><a href="evontis.html">Evontis</a></li>
+              <li><a href="creovis.html">Creovis</a></li>
+              <li><a href="ledgrix.html">LedGrix</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="services.html#web">Web Development</a></li>
+              <li><a href="services.html#mobile">Mobile Apps</a></li>
+              <li><a href="services.html#education">Education</a></li>
+              <li><a href="services.html#media">Media Production</a></li>
+              <li><a href="services.html#events">Event Planning</a></li>
+              <li><a href="services.html#design">Graphic Design</a></li>
+              <li><a href="services.html#audit">Company Audit</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Connect with Us</h3>
+            <ul>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">LinkedIn</a></li>
+              <li><a href="#">Instagram</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2025 AXSYNTHE Group PVT (Ltd). All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      document
+        .querySelector(".mobile-menu")
+        .addEventListener("click", function () {
+          const nav = document.querySelector("nav ul");
+          nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+        });
+
+      // Form submission (you'll need to implement actual functionality)
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Thank you for your message! We will get back to you soon.");
+          this.reset();
+        });
+    </script>
+  </body>
+</html>
