@@ -221,12 +221,33 @@
 
       .about-image {
         flex: 1;
+        position: relative;
+        padding: 5px;
+        border-radius: 12px;
+        animation: borderPulse 2s infinite;
       }
-
+      
       .about-image img {
+        display: block;
         width: 100%;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        height: auto;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+      
+      @keyframes borderPulse {
+        0%, 100% {
+          box-shadow: 
+            0 0 0 2px rgba(65, 105, 225, 0.8),
+            0 0 4px 4px rgba(65, 105, 225, 0.5),
+            0 0 8px 6px rgba(65, 105, 225, 0.3);
+        }
+        50% {
+          box-shadow: 
+            0 0 0 2px rgba(255, 255, 255, 0.8),
+            0 0 4px 4px rgba(255, 255, 255, 0.5),
+            0 0 8px 6px rgba(255, 255, 255, 0.3);
+        }
       }
 
       /* Contact section */
