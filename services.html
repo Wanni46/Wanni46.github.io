@@ -1,308 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles/common.css">
+    <link rel="stylesheet" href="Styles/services.css">
     <title>Our Services - AXSYNTHE Group</title>
-    <style>
-        /* Reset and base styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            color: #333;
-            line-height: 1.6;
-            background-color: #f8f9fa;
-        }
-        
-        a {
-            text-decoration: none;
-            color: #0066cc;
-        }
-        
-        /* Header styles */
-        header {
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: #0d2f62;
-        }
-        
-        .logo span {
-            color: #2a9df4;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 30px;
-        }
-        
-        nav ul li a {
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        nav ul li a:hover {
-            color: #2a9df4;
-        }
-        
-        .mobile-menu {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        
-        /* Page header */
-        .page-header {
-            background: linear-gradient(135deg, #0d2f62 0%, #1e5799 100%);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-        
-        .page-header h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
-        }
-        
-        .page-header p {
-            font-size: 18px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        /* Button styles */
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: #2a9df4;
-            color: white;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: background-color 0.3s;
-        }
-        
-        .btn:hover {
-            background-color: #0d86e0;
-        }
-        
-        /* Services section */
-        .service-section {
-            padding: 80px 0;
-            scroll-margin-top: 100px;
-        }
-        
-        .service-section:nth-child(even) {
-            background-color: #f0f5ff;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-title h2 {
-            font-size: 36px;
-            color: #0d2f62;
-            margin-bottom: 15px;
-        }
-        
-        .section-title p {
-            font-size: 18px;
-            max-width: 600px;
-            margin: 0 auto;
-            color: #666;
-        }
-        
-        .service-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-        
-        .service-image img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .service-text h3 {
-            font-size: 28px;
-            color: #0d2f62;
-            margin-bottom: 20px;
-        }
-        
-        .service-text p {
-            margin-bottom: 15px;
-        }
-        
-        /* Service features */
-        .service-features {
-            margin-top: 30px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        
-        .feature-card {
-            background-color: white;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .feature-card h4 {
-            font-size: 20px;
-            color: #0d2f62;
-            margin-bottom: 10px;
-        }
-        
-        .feature-card p {
-            color: #666;
-        }
-        
-        .feature-icon {
-            font-size: 36px;
-            margin-bottom: 15px;
-            color: #2a9df4;
-        }
-        
-        /* CTA section */
-        .cta-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #0d2f62 0%, #1e5799 100%);
-            color: white;
-            text-align: center;
-        }
-        
-        .cta-section h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-        
-        .cta-section p {
-            font-size: 18px;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: #0d2f62;
-            color: white;
-            padding: 40px 0;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
-        
-        .footer-column h3 {
-            font-size: 20px;
-            margin-bottom: 20px;
-            color: #2a9df4;
-        }
-        
-        .footer-column ul {
-            list-style: none;
-        }
-        
-        .footer-column ul li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-column ul li a {
-            color: #ddd;
-            transition: color 0.3s;
-        }
-        
-        .footer-column ul li a:hover {
-            color: #2a9df4;
-        }
-        
-        .copyright {
-            margin-top: 40px;
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        /* Responsive styles */
-        @media (max-width: 992px) {
-            .service-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .service-image {
-                order: -1;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
-                padding: 20px;
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-            }
-            
-            nav ul li {
-                margin: 10px 0;
-            }
-            
-            .mobile-menu {
-                display: block;
-            }
-            
-            .page-header h1 {
-                font-size: 32px;
-            }
-        }
-    </style>
+
 </head>
+
 <body>
     <!-- Header -->
     <header>
@@ -329,7 +36,7 @@
             <p>Comprehensive solutions tailored to your business needs</p>
         </div>
     </section>
-    
+
     <!-- Web Development Section -->
     <section class="service-section" id="web">
         <div class="container">
@@ -340,24 +47,31 @@
             <div class="service-content">
                 <div class="service-text">
                     <h3>Custom Website Solutions</h3>
-                    <p>At Dev.Ora, we create websites that not only look great but also perform exceptionally well. Our web development team combines technical expertise with creative design to deliver websites that truly represent your brand and achieve your business goals.</p>
-                    <p>Whether you need a simple informational website or a complex e-commerce platform, we have the skills and experience to bring your vision to life with clean code, responsive design, and user-friendly interfaces.</p>
-                    
+                    <p>At Dev.Ora, we create websites that not only look great but also perform exceptionally well. Our
+                        web development team combines technical expertise with creative design to deliver websites that
+                        truly represent your brand and achieve your business goals.</p>
+                    <p>Whether you need a simple informational website or a complex e-commerce platform, we have the
+                        skills and experience to bring your vision to life with clean code, responsive design, and
+                        user-friendly interfaces.</p>
+
                     <div class="service-features">
                         <div class="feature-card">
                             <div class="feature-icon">💻</div>
                             <h4>Responsive Design</h4>
-                            <p>Websites that look and function perfectly on all devices, from desktops to smartphones.</p>
+                            <p>Websites that look and function perfectly on all devices, from desktops to smartphones.
+                            </p>
                         </div>
                         <div class="feature-card">
                             <div class="feature-icon">🛒</div>
                             <h4>E-commerce Solutions</h4>
-                            <p>Secure, feature-rich online stores that drive sales and provide excellent shopping experiences.</p>
+                            <p>Secure, feature-rich online stores that drive sales and provide excellent shopping
+                                experiences.</p>
                         </div>
                         <div class="feature-card">
                             <div class="feature-icon">🔄</div>
                             <h4>CMS Integration</h4>
-                            <p>User-friendly content management systems that make website updates simple and efficient.</p>
+                            <p>User-friendly content management systems that make website updates simple and efficient.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -367,7 +81,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Mobile App Development Section -->
     <section class="service-section" id="mobile">
         <div class="container">
@@ -377,31 +91,38 @@
                 </div>
                 <div class="service-text">
                     <h3>Mobile App Development</h3>
-                    <p>Edvana specializes in creating powerful, user-friendly mobile applications that engage users and drive business growth. Our team of skilled developers builds custom solutions for both iOS and Android platforms, focusing on performance, security, and exceptional user experience.</p>
-                    <p>From concept to launch and beyond, we work closely with you to ensure your app meets your business objectives and exceeds user expectations with intuitive interfaces and smooth functionality.</p>
-                    
+                    <p>Edvana specializes in creating powerful, user-friendly mobile applications that engage users and
+                        drive business growth. Our team of skilled developers builds custom solutions for both iOS and
+                        Android platforms, focusing on performance, security, and exceptional user experience.</p>
+                    <p>From concept to launch and beyond, we work closely with you to ensure your app meets your
+                        business objectives and exceeds user expectations with intuitive interfaces and smooth
+                        functionality.</p>
+
                     <div class="service-features">
                         <div class="feature-card">
                             <div class="feature-icon">📱</div>
                             <h4>Native Apps</h4>
-                            <p>High-performance native applications for iOS and Android platforms with platform-specific features.</p>
+                            <p>High-performance native applications for iOS and Android platforms with platform-specific
+                                features.</p>
                         </div>
                         <div class="feature-card">
                             <div class="feature-icon">🔄</div>
                             <h4>Cross-Platform Solutions</h4>
-                            <p>Efficient development with frameworks like React Native and Flutter for multi-platform deployment.</p>
+                            <p>Efficient development with frameworks like React Native and Flutter for multi-platform
+                                deployment.</p>
                         </div>
                         <div class="feature-card">
                             <div class="feature-icon">🧪</div>
                             <h4>Rigorous Testing</h4>
-                            <p>Comprehensive quality assurance to ensure your app functions flawlessly across all devices.</p>
+                            <p>Comprehensive quality assurance to ensure your app functions flawlessly across all
+                                devices.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Education Services Section -->
     <section class="service-section" id="education">
         <div class="container">
@@ -412,24 +133,31 @@
             <div class="service-content">
                 <div class="service-text">
                     <h3>Comprehensive Learning Solutions</h3>
-                    <p>TutoriQ provides accessible, high-quality education through our comprehensive learning platform. We offer a range of courses designed to help individuals and organizations develop new skills, advance careers, and achieve educational goals.</p>
-                    <p>Our courses are developed and taught by industry experts and qualified educators who bring real-world experience and academic excellence to our curriculum, ensuring that learners gain valuable knowledge and practical skills.</p>
-                    
+                    <p>TutoriQ provides accessible, high-quality education through our comprehensive learning platform.
+                        We offer a range of courses designed to help individuals and organizations develop new skills,
+                        advance careers, and achieve educational goals.</p>
+                    <p>Our courses are developed and taught by industry experts and qualified educators who bring
+                        real-world experience and academic excellence to our curriculum, ensuring that learners gain
+                        valuable knowledge and practical skills.</p>
+
                     <div class="service-features">
                         <div class="feature-card">
                             <div class="feature-icon">🎓</div>
                             <h4>Short-term Courses</h4>
-                            <p>Focused programs for specific skills development with quick learning outcomes and practical applications.</p>
+                            <p>Focused programs for specific skills development with quick learning outcomes and
+                                practical applications.</p>
                         </div>
                         <div class="feature-card">
                             <div class="feature-icon">📚</div>
                             <h4>Long-term Programs</h4>
-                            <p>Comprehensive certification courses for in-depth knowledge and professional advancement.</p>
+                            <p>Comprehensive certification courses for in-depth knowledge and professional advancement.
+                            </p>
                         </div>
                         <div class="feature-card">
                             <div class="feature-icon">👥</div>
                             <h4>Corporate Training</h4>
-                            <p>Customized training solutions to upskill your workforce and enhance organizational capabilities.</p>
+                            <p>Customized training solutions to upskill your workforce and enhance organizational
+                                capabilities.</p>
                         </div>
                     </div>
                 </div>
@@ -439,7 +167,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Media Production Section -->
     <section class="service-section" id="media">
         <div class="container">
@@ -449,14 +177,19 @@
                 </div>
                 <div class="service-text">
                     <h3>Photography & Videography</h3>
-                    <p>Pixora captures moments and tells stories through professional photography and videography services. Our creative team specializes in producing high-quality visual content that showcases your brand, products, or events in the best possible light.</p>
-                    <p>From commercial photography to event coverage, marketing videos to documentaries, we combine technical skill with artistic vision to create compelling visual content that engages your audience and communicates your message effectively.</p>
-                    
+                    <p>Pixora captures moments and tells stories through professional photography and videography
+                        services. Our creative team specializes in producing high-quality visual content that showcases
+                        your brand, products, or events in the best possible light.</p>
+                    <p>From commercial photography to event coverage, marketing videos to documentaries, we combine
+                        technical skill with artistic vision to create compelling visual content that engages your
+                        audience and communicates your message effectively.</p>
+
                     <div class="service-features">
                         <div class="feature-card">
                             <div class="feature-icon">📸</div>
                             <h4>Professional Photography</h4>
-                            <p>High-quality images for products, events, corporate portraits, and marketing materials.</p>
+                            <p>High-quality images for products, events, corporate portraits, and marketing materials.
+                            </p>
                         </div>
                         <div class="feature-card">
                             <div class="feature-icon">🎥</div>
@@ -473,7 +206,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Event Planning Section -->
     <section class="service-section" id="events">
         <div class="container">
@@ -484,14 +217,19 @@
             <div class="service-content">
                 <div class="service-text">
                     <h3>Comprehensive Event Management</h3>
-                    <p>Evontis specializes in planning and executing memorable events that leave lasting impressions. Our experienced team handles every aspect of event management, from initial concept development and venue selection to day-of coordination and post-event analysis.</p>
-                    <p>Whether you're hosting a corporate conference, product launch, private celebration, or large-scale festival, we bring creativity, attention to detail, and flawless logistics to ensure your event exceeds expectations.</p>
-                    
+                    <p>Evontis specializes in planning and executing memorable events that leave lasting impressions.
+                        Our experienced team handles every aspect of event management, from initial concept development
+                        and venue selection to day-of coordination and post-event analysis.</p>
+                    <p>Whether you're hosting a corporate conference, product launch, private celebration, or
+                        large-scale festival, we bring creativity, attention to detail, and flawless logistics to ensure
+                        your event exceeds expectations.</p>
+
                     <div class="service-features">
                         <div class="feature-card">
                             <div class="feature-icon">🏢</div>
                             <h4>Corporate Events</h4>
-                            <p>Professional planning for conferences, seminars, team-building activities, and company celebrations.</p>
+                            <p>Professional planning for conferences, seminars, team-building activities, and company
+                                celebrations.</p>
                         </div>
                         <div class="feature-card">
                             <div class="feature-icon">🎉</div>
@@ -511,7 +249,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Graphic Design Section -->
     <section class="service-section" id="design">
         <div class="container">
@@ -521,19 +259,25 @@
                 </div>
                 <div class="service-text">
                     <h3>Creative Graphic Design</h3>
-                    <p>Creovis transforms ideas into captivating visual designs that communicate your brand's message effectively. Our creative team combines artistic talent with strategic thinking to produce designs that not only look beautiful but also serve your business objectives.</p>
-                    <p>From brand identity development to marketing collateral, digital assets to print materials, we create designs that capture attention, convey your message, and reinforce your brand identity across all touchpoints.</p>
-                    
+                    <p>Creovis transforms ideas into captivating visual designs that communicate your brand's message
+                        effectively. Our creative team combines artistic talent with strategic thinking to produce
+                        designs that not only look beautiful but also serve your business objectives.</p>
+                    <p>From brand identity development to marketing collateral, digital assets to print materials, we
+                        create designs that capture attention, convey your message, and reinforce your brand identity
+                        across all touchpoints.</p>
+
                     <div class="service-features">
                         <div class="feature-card">
                             <div class="feature-icon">🎨</div>
                             <h4>Brand Identity</h4>
-                            <p>Logo design, color palettes, typography, and comprehensive brand guidelines for consistent presentation.</p>
+                            <p>Logo design, color palettes, typography, and comprehensive brand guidelines for
+                                consistent presentation.</p>
                         </div>
                         <div class="feature-card">
                             <div class="feature-icon">📊</div>
                             <h4>Marketing Materials</h4>
-                            <p>Eye-catching designs for brochures, flyers, posters, banners, and digital marketing assets.</p>
+                            <p>Eye-catching designs for brochures, flyers, posters, banners, and digital marketing
+                                assets.</p>
                         </div>
                         <div class="feature-card">
                             <div class="feature-icon">📱</div>
@@ -545,7 +289,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Company Audit Section -->
     <section class="service-section" id="audit">
         <div class="container">
@@ -556,19 +300,25 @@
             <div class="service-content">
                 <div class="service-text">
                     <h3>Financial Management & Audit</h3>
-                    <p>LedGrix provides comprehensive audit and financial management services to help businesses maintain financial health, ensure compliance, and make informed strategic decisions. Our experienced team delivers accurate, timely, and reliable financial services.</p>
-                    <p>From detailed financial audits to ongoing accounting support, tax planning to financial consulting, we deliver services that help organizations understand their financial position, identify areas for improvement, and plan for future growth.</p>
-                    
+                    <p>LedGrix provides comprehensive audit and financial management services to help businesses
+                        maintain financial health, ensure compliance, and make informed strategic decisions. Our
+                        experienced team delivers accurate, timely, and reliable financial services.</p>
+                    <p>From detailed financial audits to ongoing accounting support, tax planning to financial
+                        consulting, we deliver services that help organizations understand their financial position,
+                        identify areas for improvement, and plan for future growth.</p>
+
                     <div class="service-features">
                         <div class="feature-card">
                             <div class="feature-icon">📊</div>
                             <h4>Financial Audits</h4>
-                            <p>Thorough examination of financial statements and processes to ensure accuracy and compliance.</p>
+                            <p>Thorough examination of financial statements and processes to ensure accuracy and
+                                compliance.</p>
                         </div>
                         <div class="feature-card">
                             <div class="feature-icon">📝</div>
                             <h4>Compliance Reviews</h4>
-                            <p>Assessment of business operations to ensure adherence to relevant regulations and standards.</p>
+                            <p>Assessment of business operations to ensure adherence to relevant regulations and
+                                standards.</p>
                         </div>
                         <div class="feature-card">
                             <div class="feature-icon">💼</div>
@@ -583,7 +333,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
@@ -648,7 +398,7 @@
 
     <script>
         // Mobile menu toggle
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
+        document.querySelector('.mobile-menu').addEventListener('click', function () {
             const nav = document.querySelector('nav ul');
             if (nav.style.display === 'flex') {
                 nav.style.display = 'none';
@@ -658,4 +408,5 @@
         });
     </script>
 </body>
+
 </html>

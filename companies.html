@@ -1,417 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover the specialized companies under AXSYNTHE Group delivering excellence in web development, education, media production, and more.">
+    <meta name="description"
+        content="Discover the specialized companies under AXSYNTHE Group delivering excellence in web development, education, media production, and more.">
     <meta name="keywords" content="AXSYNTHE Group, Dev.Ora, Edvana, TutoriQ, Pixora, Evontis, Creovis, LedGrix">
+    <link rel="stylesheet" href="Styles/common.css">
+    <link rel="stylesheet" href="Styles/companies.css">
     <title>Our Companies - AXSYNTHE GROUP</title>
-    <style>
-        /* Reset and base styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            color: #333;
-            line-height: 1.6;
-            background-color: #f8f9fa;
-        }
-        
-        a {
-            text-decoration: none;
-            color: #0066cc;
-        }
-        
-        /* Header styles */
-        header {
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: #0d2f62;
-        }
-        
-        .logo span {
-            color: #2a9df4;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-            transition: all 0.3s ease;
-        }
-        
-        nav ul li {
-            margin-left: 30px;
-        }
-        
-        nav ul li a {
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        nav ul li a:hover,
-        nav ul li.active a {
-            color: #2a9df4;
-        }
-        
-        nav ul li.active a {
-            font-weight: 700;
-        }
-        
-        .mobile-menu {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        
-        /* Page header */
-        .page-header {
-            background: linear-gradient(135deg, #0d2f62 0%, #1e5799 100%);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-        
-        .page-header h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
-        }
-        
-        .page-header p {
-            font-size: 18px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        /* Filter system */
-        .filter-container {
-            text-align: center;
-            margin-bottom: 30px;
-            padding-top: 40px;
-        }
 
-        .filter-buttons {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .filter-btn {
-            padding: 8px 16px;
-            background-color: #f0f5ff;
-            border: 1px solid #2a9df4;
-            color: #0d2f62;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .filter-btn.active, .filter-btn:hover {
-            background-color: #2a9df4;
-            color: white;
-        }
-        
-        /* Button styles */
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: #2a9df4;
-            color: white;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: background-color 0.3s;
-        }
-        
-        .btn:hover {
-            background-color: #0d86e0;
-        }
-        
-        /* Company showcase */
-        .company-showcase {
-            padding: 80px 0;
-        }
-        
-        .company-showcase:nth-child(even) {
-            background-color: #f0f5ff;
-        }
-        
-        .company-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-        
-        .company-image img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .company-text h2 {
-            font-size: 32px;
-            color: #0d2f62;
-            margin-bottom: 20px;
-        }
-        
-        .company-text h3 {
-            font-size: 20px;
-            color: #2a9df4;
-            margin-bottom: 15px;
-        }
-        
-        .company-text p {
-            margin-bottom: 15px;
-        }
-        
-        .service-list {
-            list-style: none;
-            margin-bottom: 25px;
-        }
-        
-        .service-list li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 10px;
-        }
-        
-        .service-list li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #2a9df4;
-            font-weight: bold;
-        }
-        
-        /* Education levels */
-        .education-levels {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-bottom: 25px;
-        }
-        
-        .education-level {
-            background-color: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        }
-        
-        .education-level h4 {
-            color: #0d2f62;
-            margin-bottom: 10px;
-        }
-        
-        /* Contact cards */
-        .contact-card {
-            margin-top: 25px;
-            padding: 15px;
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid #2a9df4;
-        }
-
-        .contact-details {
-            display: none;
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px dashed #ccc;
-        }
-
-        .contact-toggle {
-            background-color: #2a9df4;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        .contact-toggle:hover {
-            background-color: #0d86e0;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: #0d2f62;
-            color: white;
-            padding: 40px 0;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
-        
-        .footer-column h3 {
-            font-size: 20px;
-            margin-bottom: 20px;
-            color: #2a9df4;
-        }
-        
-        .footer-column ul {
-            list-style: none;
-        }
-        
-        .footer-column ul li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-column ul li a {
-            color: #ddd;
-            transition: color 0.3s;
-        }
-        
-        .footer-column ul li a:hover {
-            color: #2a9df4;
-        }
-        
-        .copyright {
-            margin-top: 40px;
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        /* Back to top button */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #2a9df4;
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            text-decoration: none;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            z-index: 99;
-        }
-        
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        /* Responsive styles */
-        @media (max-width: 992px) {
-            .company-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .company-image {
-                order: -1;
-            }
-            
-            .page-header {
-                padding: 60px 0;
-            }
-            
-            .page-header h1 {
-                font-size: 36px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
-                padding: 20px;
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-                transform: translateY(-20px);
-                opacity: 0;
-                visibility: hidden;
-            }
-            
-            nav ul.active {
-                display: flex;
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
-            }
-            
-            nav ul li {
-                margin: 10px 0;
-            }
-            
-            .mobile-menu {
-                display: block;
-            }
-            
-            .page-header h1 {
-                font-size: 32px;
-            }
-            
-            .education-level {
-                padding: 15px;
-                border-bottom: 1px solid #eee;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .company-image img {
-                max-height: 200px;
-                width: auto;
-                margin: 0 auto;
-                display: block;
-            }
-            
-            .filter-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .filter-btn {
-                width: 100%;
-                max-width: 200px;
-                margin-bottom: 5px;
-            }
-        }
-    </style>
 </head>
+
 <body>
     <!-- Back to top button -->
     <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
@@ -451,7 +52,8 @@
             <button class="filter-btn" data-filter="education">Education</button>
             <button class="filter-btn" data-filter="creative">Creative</button>
             <button class="filter-btn" data-filter="business">Business</button>
-        </div> </div>
+        </div>
+    </div>
 
     <!-- Dev.Ora -->
     <article class="company-showcase" id="devora" data-category="tech">
@@ -460,8 +62,11 @@
                 <div class="company-text">
                     <h2>Dev.Ora</h2>
                     <h3>Professional Website Development & Design</h3>
-                    <p>Dev.Ora specializes in creating beautiful, functional, and responsive websites that elevate your brand's online presence. Our team of experienced developers and designers work together to deliver custom website solutions that drive results for businesses of all sizes.</p>
-                    <p>From simple landing pages to complex e-commerce platforms, we combine technical expertise with creative design to build websites that engage visitors and convert them into customers.</p>
+                    <p>Dev.Ora specializes in creating beautiful, functional, and responsive websites that elevate your
+                        brand's online presence. Our team of experienced developers and designers work together to
+                        deliver custom website solutions that drive results for businesses of all sizes.</p>
+                    <p>From simple landing pages to complex e-commerce platforms, we combine technical expertise with
+                        creative design to build websites that engage visitors and convert them into customers.</p>
                     <h3>Our Services</h3>
                     <ul class="service-list">
                         <li>Custom Website Development</li>
@@ -472,7 +77,7 @@
                         <li>Performance Optimization</li>
                     </ul>
                     <a href="devora.html" class="btn">Learn More</a>
-                    
+
                     <div class="contact-card">
                         <h4>Contact This Company</h4>
                         <button class="contact-toggle">Show Contact Info</button>
@@ -499,16 +104,26 @@
                 </div>
                 <div class="company-text">
                     <h2>EDVANA</h2>
-                    <p>Edvana is a comprehensive education platform dedicated to delivering high-quality, accessible learning experiences for students from Pre-School to University level. Through a blend of subscription-based and free video tutorials, interactive homework modules, and free seminars, Edvana empowers students to learn at their own pace—anytime, anywhere.</p>
-                    <p>We focus on making education engaging and effective by integrating technology with curriculum-based content tailored to the Sri Lankan education system and beyond.</p>
+                    <p>Edvana is a comprehensive education platform dedicated to delivering high-quality, accessible
+                        learning experiences for students from Pre-School to University level. Through a blend of
+                        subscription-based and free video tutorials, interactive homework modules, and free seminars,
+                        Edvana empowers students to learn at their own pace—anytime, anywhere.</p>
+                    <p>We focus on making education engaging and effective by integrating technology with
+                        curriculum-based content tailored to the Sri Lankan education system and beyond.</p>
                     <h3>Our Educational Services</h3>
-                    <ul class="service-list"> 
-                        <li>Engaging video-based learning from Pre-School to University level with free and subscription options.</li>
-                        <li>Grades 1–11: Curriculum-aligned video lessons, interactive homework, and free tutorials included.</li>
-                        <li>A/L Streams (Bio, Maths, Commerce, Tech, Arts) with in-depth lessons by qualified educators.</li>
-                        <li>Platform-based learning with interactive assignments, revision seminars, and homework tools.</li>
-                        <li>University content covers Computer, Electrical, Electronic, Civil Engineering, and more.</li>
-                        <li>Monthly subscription plans available with free access options for selected content and seminars.</li>
+                    <ul class="service-list">
+                        <li>Engaging video-based learning from Pre-School to University level with free and subscription
+                            options.</li>
+                        <li>Grades 1–11: Curriculum-aligned video lessons, interactive homework, and free tutorials
+                            included.</li>
+                        <li>A/L Streams (Bio, Maths, Commerce, Tech, Arts) with in-depth lessons by qualified educators.
+                        </li>
+                        <li>Platform-based learning with interactive assignments, revision seminars, and homework tools.
+                        </li>
+                        <li>University content covers Computer, Electrical, Electronic, Civil Engineering, and more.
+                        </li>
+                        <li>Monthly subscription plans available with free access options for selected content and
+                            seminars.</li>
                     </ul>
                     <a href="edvana.html" class="btn">Learn More</a>
                     <div class="contact-card">
@@ -532,8 +147,12 @@
                 <div class="company-text">
                     <h2>TutoriQ</h2>
                     <h3>Comprehensive Education Platform</h3>
-                    <p>TutoriQ is dedicated to making quality education accessible through our comprehensive learning platform. We offer both short-term and long-term courses designed to help individuals and organizations develop new skills, expand knowledge, and achieve professional growth.</p>
-                    <p>Our courses are developed by industry experts and educators who bring real-world experience and academic excellence to our curriculum, ensuring that learners gain practical skills they can apply immediately.</p>
+                    <p>TutoriQ is dedicated to making quality education accessible through our comprehensive learning
+                        platform. We offer both short-term and long-term courses designed to help individuals and
+                        organizations develop new skills, expand knowledge, and achieve professional growth.</p>
+                    <p>Our courses are developed by industry experts and educators who bring real-world experience and
+                        academic excellence to our curriculum, ensuring that learners gain practical skills they can
+                        apply immediately.</p>
                     <h3>Our Services</h3>
                     <ul class="service-list">
                         <li>Short-term Professional Courses</li>
@@ -544,7 +163,7 @@
                         <li>Customized Learning Paths</li>
                     </ul>
                     <a href="tutoriq.html" class="btn">Learn More</a>
-                    
+
                     <div class="contact-card">
                         <h4>Contact This Company</h4>
                         <button class="contact-toggle">Show Contact Info</button>
@@ -561,7 +180,7 @@
             </div>
         </div>
     </article>
-    
+
     <!-- Pixora -->
     <article class="company-showcase" id="pixora" data-category="creative">
         <div class="container">
@@ -572,8 +191,12 @@
                 <div class="company-text">
                     <h2>Pixora</h2>
                     <h3>Photography & Videography Services</h3>
-                    <p>Pixora captures moments and tells stories through professional photography and videography. Our creative team specializes in producing high-quality visual content that showcases your brand, products, events, and services in the best possible light.</p>
-                    <p>From corporate events to product photography, marketing videos to documentaries, we combine technical skill with artistic vision to create compelling visual content that engages and inspires your audience.</p>
+                    <p>Pixora captures moments and tells stories through professional photography and videography. Our
+                        creative team specializes in producing high-quality visual content that showcases your brand,
+                        products, events, and services in the best possible light.</p>
+                    <p>From corporate events to product photography, marketing videos to documentaries, we combine
+                        technical skill with artistic vision to create compelling visual content that engages and
+                        inspires your audience.</p>
                     <h3>Our Services</h3>
                     <ul class="service-list">
                         <li>Commercial Photography</li>
@@ -584,7 +207,7 @@
                         <li>Drone Photography & Videography</li>
                     </ul>
                     <a href="pixora.html" class="btn">Learn More</a>
-                    
+
                     <div class="contact-card">
                         <h4>Contact This Company</h4>
                         <button class="contact-toggle">Show Contact Info</button>
@@ -606,8 +229,12 @@
                 <div class="company-text">
                     <h2>Evontis</h2>
                     <h3>Event Planning & Management</h3>
-                    <p>Evontis specializes in planning and executing memorable events that leave lasting impressions. Our experienced team handles every aspect of event management, from initial concept development to seamless execution, ensuring that your vision comes to life exactly as you imagined.</p>
-                    <p>Whether you're hosting a corporate conference, product launch, private celebration, or large-scale festival, we bring creativity, attention to detail, and flawless logistics to make your event a success.</p>
+                    <p>Evontis specializes in planning and executing memorable events that leave lasting impressions.
+                        Our experienced team handles every aspect of event management, from initial concept development
+                        to seamless execution, ensuring that your vision comes to life exactly as you imagined.</p>
+                    <p>Whether you're hosting a corporate conference, product launch, private celebration, or
+                        large-scale festival, we bring creativity, attention to detail, and flawless logistics to make
+                        your event a success.</p>
                     <h3>Our Services</h3>
                     <ul class="service-list">
                         <li>Corporate Events & Conferences</li>
@@ -618,7 +245,7 @@
                         <li>Virtual & Hybrid Events</li>
                     </ul>
                     <a href="evontis.html" class="btn">Learn More</a>
-                    
+
                     <div class="contact-card">
                         <h4>Contact This Company</h4>
                         <button class="contact-toggle">Show Contact Info</button>
@@ -646,8 +273,12 @@
                 <div class="company-text">
                     <h2>Creovis</h2>
                     <h3>Creative Graphic Design</h3>
-                    <p>Creovis transforms ideas into captivating visual designs that communicate your brand's message effectively. Our creative team combines artistic talent with strategic thinking to develop visual assets that stand out in today's competitive marketplace.</p>
-                    <p>From brand identity development to marketing collateral, digital assets to print materials, we create designs that not only look beautiful but also serve your business objectives and connect with your target audience.</p>
+                    <p>Creovis transforms ideas into captivating visual designs that communicate your brand's message
+                        effectively. Our creative team combines artistic talent with strategic thinking to develop
+                        visual assets that stand out in today's competitive marketplace.</p>
+                    <p>From brand identity development to marketing collateral, digital assets to print materials, we
+                        create designs that not only look beautiful but also serve your business objectives and connect
+                        with your target audience.</p>
                     <h3>Our Services</h3>
                     <ul class="service-list">
                         <li>Brand Identity & Logo Design</li>
@@ -658,7 +289,7 @@
                         <li>Print & Digital Publication Design</li>
                     </ul>
                     <a href="creovis.html" class="btn">Learn More</a>
-                    
+
                     <div class="contact-card">
                         <h4>Contact This Company</h4>
                         <button class="contact-toggle">Show Contact Info</button>
@@ -680,8 +311,12 @@
                 <div class="company-text">
                     <h2>LedGrix</h2>
                     <h3>Company Audit & Financial Management</h3>
-                    <p>LedGrix provides comprehensive audit and financial management services to help businesses maintain financial health, ensure compliance, and make informed strategic decisions. Our team of experienced professionals brings expertise and integrity to every engagement.</p>
-                    <p>From detailed financial audits to ongoing accounting support, tax planning to financial consulting, we deliver services that help organizations understand their financial position, identify opportunities for improvement, and plan for sustainable growth.</p>
+                    <p>LedGrix provides comprehensive audit and financial management services to help businesses
+                        maintain financial health, ensure compliance, and make informed strategic decisions. Our team of
+                        experienced professionals brings expertise and integrity to every engagement.</p>
+                    <p>From detailed financial audits to ongoing accounting support, tax planning to financial
+                        consulting, we deliver services that help organizations understand their financial position,
+                        identify opportunities for improvement, and plan for sustainable growth.</p>
                     <h3>Our Services</h3>
                     <ul class="service-list">
                         <li>Financial Audits</li>
@@ -765,20 +400,20 @@
 
     <script>
         // Wait for DOM to load
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Mobile menu toggle
             const mobileMenuBtn = document.querySelector('.mobile-menu');
             const navMenu = document.querySelector('nav ul');
-            
-            mobileMenuBtn.addEventListener('click', function() {
+
+            mobileMenuBtn.addEventListener('click', function () {
                 navMenu.classList.toggle('active');
             });
-            
+
             // Contact card toggles
             const contactToggles = document.querySelectorAll('.contact-toggle');
-            
+
             contactToggles.forEach(button => {
-                button.addEventListener('click', function() {
+                button.addEventListener('click', function () {
                     const details = this.nextElementSibling;
                     if (details.style.display === 'block') {
                         details.style.display = 'none';
@@ -789,19 +424,19 @@
                     }
                 });
             });
-            
+
             // Company filtering
             const filterBtns = document.querySelectorAll('.filter-btn');
             const companies = document.querySelectorAll('.company-showcase');
-            
+
             filterBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
+                btn.addEventListener('click', function () {
                     const filter = this.dataset.filter;
-                    
+
                     // Update active button
                     filterBtns.forEach(btn => btn.classList.remove('active'));
                     this.classList.add('active');
-                    
+
                     // Filter companies
                     companies.forEach(company => {
                         if (filter === 'all' || company.dataset.category === filter) {
@@ -812,27 +447,27 @@
                     });
                 });
             });
-            
+
             // Smooth scroll for anchor links
             const anchorLinks = document.querySelectorAll('a[href^="#"]:not(.back-to-top)');
-            
+
             anchorLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
+                link.addEventListener('click', function (e) {
                     e.preventDefault();
-                    
+
                     // Get the target element
                     const targetId = this.getAttribute('href');
                     if (targetId === '#') return; // Skip if it's just "#"
-                    
+
                     const targetElement = document.querySelector(targetId);
-                    
+
                     if (targetElement) {
                         // Smooth scroll to target
                         window.scrollTo({
                             top: targetElement.offsetTop - 80, // Offset for header
                             behavior: 'smooth'
                         });
-                        
+
                         // Close mobile menu if open
                         if (navMenu.classList.contains('active')) {
                             navMenu.classList.remove('active');
@@ -840,30 +475,30 @@
                     }
                 });
             });
-            
+
             // Back to top button
             const backToTopBtn = document.querySelector('.back-to-top');
-            
-            window.addEventListener('scroll', function() {
+
+            window.addEventListener('scroll', function () {
                 if (window.pageYOffset > 300) {
                     backToTopBtn.classList.add('visible');
                 } else {
                     backToTopBtn.classList.remove('visible');
                 }
             });
-            
-            backToTopBtn.addEventListener('click', function(e) {
+
+            backToTopBtn.addEventListener('click', function (e) {
                 e.preventDefault();
                 window.scrollTo({
                     top: 0,
                     behavior: 'smooth'
                 });
             });
-            
+
             // Set current page as active in navigation
             const currentPage = window.location.pathname.split('/').pop() || 'index.html';
             const navLinks = document.querySelectorAll('nav ul li a');
-            
+
             navLinks.forEach(link => {
                 if (link.getAttribute('href') === currentPage) {
                     link.parentElement.classList.add('active');
@@ -872,4 +507,5 @@
         });
     </script>
 </body>
+
 </html>
