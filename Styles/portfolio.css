@@ -1,5 +1,3 @@
-/* Portfolio Section Styles - Futuristic Theme */
-
 /* Portfolio Section Base */
 .portfolio-section {
     padding: 80px 0;
@@ -138,7 +136,8 @@
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     opacity: 1;
     transform: scale(1);
-    aspect-ratio: 4/3; /* Modern aspect ratio */
+    aspect-ratio: 4/3;
+    /* Modern aspect ratio */
     height: auto;
 }
 
@@ -393,7 +392,8 @@
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
-    aspect-ratio: 16/9; /* Widescreen format */
+    aspect-ratio: 16/9;
+    /* Widescreen format */
     height: auto;
     perspective: 1000px;
     transform-style: preserve-3d;
@@ -524,7 +524,8 @@
     overflow: hidden;
 }
 
-.cta-section::before, .cta-section::after {
+.cta-section::before,
+.cta-section::after {
     content: '';
     position: absolute;
     width: 300px;
@@ -580,18 +581,22 @@
 }
 
 /* Animated Background Lines */
-.portfolio-section, .case-study, .testimonials {
+.portfolio-section,
+.case-study,
+.testimonials {
     position: relative;
 }
 
-.portfolio-section::before, .case-study::before, .testimonials::before {
+.portfolio-section::before,
+.case-study::before,
+.testimonials::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: 
+    background:
         linear-gradient(90deg, transparent 99%, rgba(42, 157, 244, 0.1) 99.5%),
         linear-gradient(to bottom, transparent 99%, rgba(42, 157, 244, 0.1) 99.5%);
     background-size: 60px 60px;
@@ -605,12 +610,12 @@
     .case-study-content {
         grid-template-columns: 1fr;
     }
-    
+
     .case-study-image {
         order: -1;
         height: 300px;
     }
-    
+
     .portfolio-grid {
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     }
@@ -620,26 +625,27 @@
     .section-title h2 {
         font-size: 28px;
     }
-    
+
     .case-stats {
         grid-template-columns: 1fr;
         gap: 15px;
     }
-    
+
     .portfolio-filter {
         flex-wrap: nowrap;
         overflow-x: auto;
         padding-bottom: 15px;
         justify-content: flex-start;
     }
-    
+
     .filter-btn {
         white-space: nowrap;
         flex-shrink: 0;
     }
-    
+
     .portfolio-item {
-        aspect-ratio: 3/2; /* Slightly different ratio for mobile */
+        aspect-ratio: 3/2;
+        /* Slightly different ratio for mobile */
     }
 }
 
@@ -647,35 +653,53 @@
     .portfolio-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .portfolio-overlay {
         padding: 20px;
     }
-    
+
     .testimonial-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .portfolio-item {
-        aspect-ratio: 3/2; /* Maintain ratio on mobile */
+        aspect-ratio: 3/2;
+        /* Maintain ratio on mobile */
     }
-    
+
     .case-study-image {
-        aspect-ratio: 3/2; /* Adjust for better mobile viewing */
+        aspect-ratio: 3/2;
+        /* Adjust for better mobile viewing */
     }
 }
 
 /* Animation Keyframes */
 @keyframes pulse {
-    0% { opacity: 0.5; }
-    50% { opacity: 1; }
-    100% { opacity: 0.5; }
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
 }
 
 @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 /* Loading Animation */
@@ -705,9 +729,17 @@
 }
 
 @keyframes gradientBorder {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* Interactive Portfolio Elements */
@@ -726,13 +758,11 @@
     opacity: 0;
     transform: rotate(30deg);
     background: rgba(255, 255, 255, 0.13);
-    background: linear-gradient(
-        to right, 
-        rgba(255, 255, 255, 0.13) 0%,
-        rgba(255, 255, 255, 0.13) 77%,
-        rgba(255, 255, 255, 0.5) 92%,
-        rgba(255, 255, 255, 0.0) 100%
-    );
+    background: linear-gradient(to right,
+            rgba(255, 255, 255, 0.13) 0%,
+            rgba(255, 255, 255, 0.13) 77%,
+            rgba(255, 255, 255, 0.5) 92%,
+            rgba(255, 255, 255, 0.0) 100%);
 }
 
 .portfolio-filter .filter-btn:hover:after {
@@ -742,23 +772,4 @@
     transition-property: left, top, opacity;
     transition-duration: 0.7s, 0.7s, 0.15s;
     transition-timing-function: ease;
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--bg-light);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--primary-light);
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--primary-medium);
 }
