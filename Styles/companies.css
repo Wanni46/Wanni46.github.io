@@ -15,9 +15,9 @@
 
 .filter-btn {
     padding: 8px 16px;
-    background-color: #f0f5ff;
-    border: 1px solid #2a9df4;
-    color: #0d2f62;
+    background-color: var(--bg-accent);
+    border: 1px solid var(--primary-light);
+    color: var(--primary-dark);
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s;
@@ -25,11 +25,9 @@
 
 .filter-btn.active,
 .filter-btn:hover {
-    background-color: #2a9df4;
-    color: white;
+    background-color: var(--primary-light);
+    color: var(--bg-white);
 }
-
-
 
 /* Company showcase */
 .company-showcase {
@@ -37,7 +35,7 @@
 }
 
 .company-showcase:nth-child(even) {
-    background-color: #f0f5ff;
+    background-color: var(--bg-accent);
 }
 
 .company-content {
@@ -50,18 +48,18 @@
 .company-image img {
     width: 100%;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px var(--shadow-color);
 }
 
 .company-text h2 {
     font-size: 32px;
-    color: #0d2f62;
+    color: var(--primary-dark);
     margin-bottom: 20px;
 }
 
 .company-text h3 {
     font-size: 20px;
-    color: #2a9df4;
+    color: var(--primary-light);
     margin-bottom: 15px;
 }
 
@@ -84,7 +82,7 @@
     content: "✓";
     position: absolute;
     left: 0;
-    color: #2a9df4;
+    color: var(--primary-light);
     font-weight: bold;
 }
 
@@ -97,14 +95,14 @@
 }
 
 .education-level {
-    background-color: #f8f9fa;
+    background-color: var(--bg-light);
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .education-level h4 {
-    color: #0d2f62;
+    color: var(--primary-dark);
     margin-bottom: 10px;
 }
 
@@ -112,21 +110,21 @@
 .contact-card {
     margin-top: 25px;
     padding: 15px;
-    background-color: #f8f9fa;
+    background-color: var(--bg-light);
     border-radius: 8px;
-    border-left: 4px solid #2a9df4;
+    border-left: 4px solid var(--primary-light);
 }
 
 .contact-details {
     display: none;
     margin-top: 15px;
     padding-top: 15px;
-    border-top: 1px dashed #ccc;
+    border-top: 1px dashed var(--border-light);
 }
 
 .contact-toggle {
-    background-color: #2a9df4;
-    color: white;
+    background-color: var(--primary-light);
+    color: var(--bg-white);
     border: none;
     padding: 8px 15px;
     border-radius: 4px;
@@ -135,18 +133,16 @@
 }
 
 .contact-toggle:hover {
-    background-color: #0d86e0;
+    background-color: var(--hover-color);
 }
-
-
 
 /* Back to top button */
 .back-to-top {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #2a9df4;
-    color: white;
+    background-color: var(--primary-light);
+    color: var(--bg-white);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -188,7 +184,6 @@
 
 @media (max-width: 768px) {
     nav ul {
-
         transform: translateY(-20px);
         opacity: 0;
         visibility: hidden;
@@ -201,15 +196,9 @@
         visibility: visible;
     }
 
-
-
-
-
-
-
     .education-level {
         padding: 15px;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid var(--border-lighter);
     }
 }
 

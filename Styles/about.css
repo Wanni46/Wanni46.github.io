@@ -4,7 +4,7 @@
 }
 
 .about-section:nth-child(even) {
-    background-color: #f0f5ff;
+    background-color: var(--bg-accent);
 }
 
 .section-title {
@@ -14,7 +14,7 @@
 
 .section-title h2 {
     font-size: 36px;
-    color: #0d2f62;
+    color: var(--primary-dark);
     margin-bottom: 15px;
 }
 
@@ -22,7 +22,7 @@
     font-size: 18px;
     max-width: 600px;
     margin: 0 auto;
-    color: #666;
+    color: var(--text-medium);
 }
 
 .about-content {
@@ -35,12 +35,12 @@
 .about-image img {
     width: 100%;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px var(--shadow-color);
 }
 
 .about-text h3 {
     font-size: 28px;
-    color: #0d2f62;
+    color: var(--primary-dark);
     margin-bottom: 20px;
 }
 
@@ -50,7 +50,7 @@
 
 /* Values section */
 .values {
-    background-color: #0d2f62;
+    background-color: var(--primary-dark);
     color: white;
     padding: 80px 0;
 }
@@ -60,7 +60,7 @@
 }
 
 .values .section-title p {
-    color: #ddd;
+    color: var(--text-light);
 }
 
 .values-grid {
@@ -70,7 +70,7 @@
 }
 
 .value-card {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--white-overlay);
     padding: 30px;
     border-radius: 10px;
     text-align: center;
@@ -83,7 +83,7 @@
 
 .value-card i {
     font-size: 40px;
-    color: #2a9df4;
+    color: var(--primary-light);
     margin-bottom: 20px;
 }
 
@@ -104,10 +104,10 @@
 }
 
 .team-card {
-    background-color: white;
+    background-color: var(--bg-white);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px var(--shadow-color);
     text-align: center;
 }
 
@@ -124,25 +124,24 @@
 .team-info h3 {
     font-size: 22px;
     margin-bottom: 5px;
-    color: #0d2f62;
+    color: var(--primary-dark);
 }
 
 .team-info p {
-    color: #2a9df4;
+    color: var(--primary-light);
     font-weight: 500;
     margin-bottom: 15px;
 }
 
 .social-links a {
     margin: 0 10px;
-    color: #666;
+    color: var(--text-medium);
     transition: color 0.3s;
 }
 
 .social-links a:hover {
-    color: #2a9df4;
+    color: var(--primary-light);
 }
-
 
 /* Responsive styles */
 @media (max-width: 992px) {

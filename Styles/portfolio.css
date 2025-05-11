@@ -4,7 +4,7 @@
 }
 
 .portfolio-section:nth-child(even) {
-    background-color: #f0f5ff;
+    background-color: var(--bg-accent);
 }
 
 .section-title {
@@ -14,7 +14,7 @@
 
 .section-title h2 {
     font-size: 36px;
-    color: #0d2f62;
+    color: var(--primary-dark);
     margin-bottom: 15px;
 }
 
@@ -22,7 +22,7 @@
     font-size: 18px;
     max-width: 600px;
     margin: 0 auto;
-    color: #666;
+    color: var(--text-medium);
 }
 
 /* Portfolio filter */
@@ -39,7 +39,7 @@
     padding: 10px 20px;
     margin: 5px;
     font-size: 16px;
-    color: #666;
+    color: var(--text-medium);
     cursor: pointer;
     font-weight: 500;
     transition: all 0.3s;
@@ -48,8 +48,8 @@
 
 .filter-btn:hover,
 .filter-btn.active {
-    background-color: #2a9df4;
-    color: white;
+    background-color: var(--primary-light);
+    color: var(--white);
 }
 
 /* Portfolio grid */
@@ -63,10 +63,10 @@
     position: relative;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px var(--shadow-color);
     transform: translateY(0);
     transition: transform 0.3s;
-    background: white;
+    background: var(--bg-white);
 }
 
 .portfolio-item:hover {
@@ -86,18 +86,18 @@
 
 .portfolio-overlay h3 {
     font-size: 22px;
-    color: #0d2f62;
+    color: var(--primary-dark);
     margin-bottom: 10px;
 }
 
 .portfolio-overlay p {
-    color: #666;
+    color: var(--text-medium);
     margin-bottom: 15px;
 }
 
 .portfolio-category {
     font-size: 14px;
-    color: #2a9df4;
+    color: var(--primary-light);
     font-weight: 600;
     margin-bottom: 5px;
     display: block;
@@ -106,7 +106,7 @@
 /* Case study section */
 .case-study {
     padding: 80px 0;
-    background-color: #f0f5ff;
+    background-color: var(--bg-accent);
 }
 
 .case-study-content {
@@ -119,12 +119,12 @@
 .case-study-image img {
     width: 100%;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px var(--shadow-color);
 }
 
 .case-study-text h3 {
     font-size: 28px;
-    color: #0d2f62;
+    color: var(--primary-dark);
     margin-bottom: 20px;
 }
 
@@ -144,18 +144,17 @@
 }
 
 .testimonial-card {
-    background-color: white;
+    background-color: var(--bg-white);
     border-radius: 10px;
     padding: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px var(--shadow-lighter);
     position: relative;
 }
 
 .testimonial-card:before {
     content: "\201C";
-    /* Unicode character for opening double quote */
     font-size: 80px;
-    color: #f0f5ff;
+    color: var(--bg-quote);
     position: absolute;
     top: 10px;
     left: 20px;
@@ -190,19 +189,19 @@
 .author-info h4 {
     font-size: 18px;
     margin-bottom: 5px;
-    color: #0d2f62;
+    color: var(--primary-dark);
 }
 
 .author-info p {
     font-size: 14px;
-    color: #666;
+    color: var(--text-medium);
 }
 
 /* CTA section */
 .cta-section {
     padding: 80px 0;
-    background: linear-gradient(135deg, #0d2f62 0%, #1e5799 100%);
-    color: white;
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-medium) 100%);
+    color: var(--white);
     text-align: center;
 }
 
@@ -216,8 +215,6 @@
     max-width: 700px;
     margin: 0 auto 30px;
 }
-
-
 
 /* Responsive styles */
 @media (max-width: 992px) {

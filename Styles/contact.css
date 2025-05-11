@@ -11,7 +11,7 @@
 
 .contact-info h3 {
     font-size: 28px;
-    color: #0d2f62;
+    color: var(--primary-dark);
     margin-bottom: 30px;
 }
 
@@ -23,30 +23,30 @@
 
 .contact-info i {
     margin-right: 15px;
-    color: #2a9df4;
+    color: var(--primary-light);
     font-size: 24px;
     min-width: 24px;
 }
 
 .contact-info a {
-    color: #333;
+    color: var(--text-dark);
     transition: color 0.3s;
 }
 
 .contact-info a:hover {
-    color: #2a9df4;
+    color: var(--primary-light);
 }
 
 .contact-form {
-    background-color: white;
+    background-color: var(--bg-white);
     padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px var(--shadow-lighter);
 }
 
 .contact-form h3 {
     font-size: 28px;
-    color: #0d2f62;
+    color: var(--primary-dark);
     margin-bottom: 20px;
 }
 
@@ -65,7 +65,7 @@
 .form-group select {
     width: 100%;
     padding: 12px 15px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--text-light);
     border-radius: 5px;
     font-size: 16px;
     transition: border-color 0.3s;
@@ -75,7 +75,7 @@
 .form-group textarea:focus,
 .form-group select:focus {
     outline: none;
-    border-color: #2a9df4;
+    border-color: var(--primary-light);
 }
 
 .form-group textarea {
@@ -100,7 +100,7 @@ button.btn {
     height: 400px;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px var(--shadow-color);
 }
 
 .map-container iframe {
@@ -112,7 +112,7 @@ button.btn {
 /* Company offices section */
 .offices-section {
     padding: 80px 0;
-    background-color: #f0f5ff;
+    background-color: var(--bg-accent);
 }
 
 .section-title {
@@ -122,7 +122,7 @@ button.btn {
 
 .section-title h2 {
     font-size: 36px;
-    color: #0d2f62;
+    color: var(--primary-dark);
     margin-bottom: 15px;
 }
 
@@ -130,7 +130,7 @@ button.btn {
     font-size: 18px;
     max-width: 600px;
     margin: 0 auto;
-    color: #666;
+    color: var(--text-medium);
 }
 
 .offices-grid {
@@ -140,10 +140,10 @@ button.btn {
 }
 
 .office-card {
-    background-color: white;
+    background-color: var(--bg-white);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px var(--shadow-lighter);
 }
 
 .office-image {
@@ -163,15 +163,13 @@ button.btn {
 
 .office-info h3 {
     font-size: 22px;
-    color: #0d2f62;
+    color: var(--primary-dark);
     margin-bottom: 10px;
 }
 
 .office-info p {
     margin-bottom: 10px;
 }
-
-
 
 /* Responsive styles */
 @media (max-width: 992px) {
