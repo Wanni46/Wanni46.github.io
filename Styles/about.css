@@ -95,52 +95,150 @@
 /* Team section */
 .team {
     padding: 80px 0;
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
+/* Team card with neon effect */
 .team-card {
+    position: relative;
     background-color: var(--bg-white);
     border-radius: 10px;
-    overflow: hidden;
+    overflow: visible;
     box-shadow: 0 5px 15px var(--shadow-color);
     text-align: center;
+    padding: 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #00fffc, #fc00ff, #00ff00);
+    border-radius: 12px;
+    z-index: -2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.team-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--bg-white);
+    border-radius: 10px;
+    z-index: -1;
+    transition: box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+}
+
+.team-card:hover::before {
+    opacity: 1;
+    animation: neon-rotate 6s linear infinite;
+}
+
+.team-card:hover::after {
+    box-shadow: 
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 15px var(--primary-light),
+        0 0 20px var(--primary-light);
+    animation: neon-pulse 1.5s ease-in-out infinite alternate;
 }
 
 .team-card img {
     width: 100%;
     height: 300px;
     object-fit: cover;
+    border-radius: 8px 8px 0 0;
+    position: relative;
+    z-index: 1;
 }
 
 .team-info {
     padding: 20px;
+    position: relative;
+    z-index: 1;
+    background-color: var(--bg-white);
+    border-radius: 0 0 8px 8px;
+}
+
+.team-card:hover .team-info h3 {
+    color: var(--primary-dark);
+    text-shadow: 
+        0 0 2px var(--primary-light),
+        0 0 5px var(--primary-light);
 }
 
 .team-info h3 {
     font-size: 22px;
     margin-bottom: 5px;
     color: var(--primary-dark);
+    transition: text-shadow 0.3s ease;
 }
 
 .team-info p {
     color: var(--primary-light);
     font-weight: 500;
     margin-bottom: 15px;
+    transition: text-shadow 0.3s ease;
+}
+
+.team-card:hover .team-info p {
+    text-shadow: 0 0 3px var(--primary-light);
 }
 
 .social-links a {
     margin: 0 10px;
     color: var(--text-medium);
-    transition: color 0.3s;
+    transition: color 0.3s, text-shadow 0.3s;
 }
 
 .social-links a:hover {
     color: var(--primary-light);
+    text-shadow: 
+        0 0 5px var(--primary-light),
+        0 0 10px var(--primary-light);
+}
+
+/* Neon animation keyframes */
+@keyframes neon-pulse {
+    from {
+        box-shadow: 
+            0 0 5px #fff,
+            0 0 10px var(--primary-light),
+            0 0 15px var(--primary-light);
+    }
+    to {
+        box-shadow: 
+            0 0 10px #fff,
+            0 0 20px var(--primary-light),
+            0 0 30px var(--primary-light);
+    }
+}
+
+@keyframes neon-rotate {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
 }
 
 /* Responsive styles */
