@@ -1026,4 +1026,184 @@
           </div>
           
           <div class="portfolio-item" data-category="digital ui-ux">
-            <img src="/api/placeholder/600/600" alt="Mobile
+            <img src="/api/placeholder/600/600" alt="MobileApp Design" />
+            <div class="portfolio-overlay">
+              <h3>Fitness Pro</h3>
+              <p>UI/UX design for a fitness tracking mobile application</p>
+            </div>
+          </div>
+          
+          <div class="portfolio-item" data-category="digital motion">
+            <img src="/api/placeholder/600/600" alt="Explainer Video" />
+            <div class="portfolio-overlay">
+              <h3>Startup Explainer</h3>
+              <p>Motion graphics explainer video for a SaaS startup</p>
+            </div>
+          </div>
+          
+          <!-- Motion Graphics Projects -->
+          <div class="portfolio-item" data-category="motion">
+            <img src="/api/placeholder/600/600" alt="Product Launch Animation" />
+            <div class="portfolio-overlay">
+              <h3>Launch Animation</h3>
+              <p>Dynamic motion graphics for a product launch campaign</p>
+            </div>
+          </div>
+          
+          <div class="portfolio-item" data-category="motion">
+            <img src="/api/placeholder/600/600" alt="Event Intro Video" />
+            <div class="portfolio-overlay">
+              <h3>Event Opener</h3>
+              <p>High-energy animated opener for a corporate event</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+      <div class="container">
+        <div class="section-title">
+          <h2>WHAT OUR CLIENTS SAY</h2>
+          <p>
+            Glowing feedback from our satisfied clients
+          </p>
+        </div>
+        <div class="testimonials-slider">
+          <div class="testimonial-slide">
+            <p class="testimonial-quote">
+              "Creovis transformed our brand identity and delivered stunning designs that exceeded our expectations. Highly recommend!"
+            </p>
+            <p class="testimonial-author">Jane Doe</p>
+            <p class="testimonial-role">CEO, Organic Ventures</p>
+          </div>
+          <div class="testimonial-slide">
+            <p class="testimonial-quote">
+              "Their creativity and attention to detail are unmatched. The motion graphics they created for our campaign were phenomenal."
+            </p>
+            <p class="testimonial-author">John Smith</p>
+            <p class="testimonial-role">Marketing Director, TechNova</p>
+          </div>
+          <div class="testimonial-slide">
+            <p class="testimonial-quote">
+              "Working with Creovis has been a game-changer for our business. Their designs truly capture the essence of our brand."
+            </p>
+            <p class="testimonial-author">Emily Johnson</p>
+            <p class="testimonial-role">Founder, Serenity Wellness</p>
+          </div>
+        </div>
+        <div class="testimonial-navigation">
+          <div class="testimonial-nav-btn">◀</div>
+          <div class="testimonial-nav-btn">▶</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>GET IN TOUCH</h2>
+          <p>
+            Let's discuss your next big project
+          </p>
+        </div>
+        <div class="contact-content">
+          <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p><i class="fa-solid fa-phone"></i> +94 76 391-8301</p>
+            <p><i class="fa-solid fa-envelope"></i> axsyntheinfo@creovis.com</p>
+            <p><i class="fa-solid fa-map-marker-alt"></i> Colombo, Sri Lanka</p>
+          </div>
+          <div class="contact-form">
+            <form action="#" method="POST">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+              </div>
+              <button type="submit" class="btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>About Us</h3>
+            <p>
+              Creovis is part of the AXSYNTHE Group, delivering creative design solutions that elevate brands and drive business success.
+            </p>
+          </div>
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Follow Us</h3>
+            <ul>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">
+          &copy; 2025 Creovis. All Rights Reserved. Designed by AXSYNTHE Group.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const mobileMenu = document.querySelector('.mobile-menu');
+      const mobileNav = document.querySelector('.mobile-nav');
+      const closeMenu = document.querySelector('.close-menu');
+
+      mobileMenu.addEventListener('click', () => {
+        mobileNav.classList.add('active');
+      });
+
+      closeMenu.addEventListener('click', () => {
+        mobileNav.classList.remove('active');
+      });
+
+      // Portfolio filter functionality
+      const portfolioFilters = document.querySelectorAll('.portfolio-filter');
+      const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+      portfolioFilters.forEach(filter => {
+        filter.addEventListener('click', () => {
+          // Remove active class from all filters
+          portfolioFilters.forEach(f => f.classList.remove('active'));
+          // Add active class to clicked filter
+          filter.classList.add('active');
+          // Filter portfolio items
+          const filterValue = filter.getAttribute('data-filter');
+          portfolioItems.forEach(item => {
+            item.style.display = filterValue === 'all' || item.dataset.category.includes(filterValue) ? 'block' : 'none';
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
