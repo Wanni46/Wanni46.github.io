@@ -110,7 +110,7 @@
     background-color: var(--bg-white);
     border-radius: 10px;
     overflow: visible;
-    box-shadow: 0 5px 15px var(--shadow-color);
+    box-shadow: 0 1px 10px var(--shadow-color);
     text-align: center;
     padding: 4px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -163,10 +163,10 @@
 
 .team-card img {
     width: 100%;
-    height: 300px;
+    height: 350px;
     object-fit: cover;
-    border-radius: 8px 8px 0 0;
-    position: relative;
+    border-radius: 4px 4px 0 0;
+    position: center;
     z-index: 1;
 }
 
@@ -175,45 +175,72 @@
     position: relative;
     z-index: 1;
     background-color: var(--bg-white);
-    border-radius: 0 0 8px 8px;
+    border-radius: 0 0 4px 4px;
 }
 
-.team-card:hover .team-info h3 {
-    color: var(--primary-dark);
-    text-shadow: 
-        0 0 2px var(--primary-light),
-        0 0 5px var(--primary-light);
-}
 
-.team-info h3 {
-    font-size: 22px;
-    margin-bottom: 5px;
-    color: var(--primary-dark);
-    transition: text-shadow 0.3s ease;
-}
 
-.team-info p {
-    color: var(--primary-light);
+/* Green Button */
+.github-btn {
+    display: inline-flex;
+    align-items: center;
+    font-family: inherit;
+    font-size: 1rem;
     font-weight: 500;
-    margin-bottom: 15px;
-    transition: text-shadow 0.3s ease;
+    padding: 0.5em 1.5em;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-right: 12px;
+    transition: background 0.2s, color 0.2s, border 0.2s;
 }
 
-.team-card:hover .team-info p {
-    text-shadow: 0 0 3px var(--primary-light);
+.github-btn svg {
+    margin-right: 6px;
+    vertical-align: middle;
 }
 
-.social-links a {
-    margin: 0 10px;
-    color: var(--text-medium);
-    transition: color 0.3s, text-shadow 0.3s;
+/* Green GitHub Button */
+.github-btn--green {
+    background: #24965e;
+    color: #fff;
+    border: 2px solid #24965e;
+}
+.github-btn--green:hover {
+    background: #1d7c4d;
+    border-color: #1d7c4d;
 }
 
-.social-links a:hover {
-    color: var(--primary-light);
-    text-shadow: 
-        0 0 5px var(--primary-light),
-        0 0 10px var(--primary-light);
+.linkedin-btn {
+    display: inline-flex;
+    align-items: center;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5em 1.5em;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-right: 12px;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+}
+
+.linkedin-btn svg {
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+/* Blue LinkedIn Button */
+.linkedin-btn--blue {
+    background: #0077b5;
+    color: #fff;
+    border: 2px solid #0077b5;
+}
+.linkedin-btn--blue:hover {
+    background: #005983;
+    border-color: #005983;
 }
 
 /* Neon animation keyframes */
@@ -221,14 +248,14 @@
     from {
         box-shadow: 
             0 0 5px #fff,
-            0 0 10px var(--primary-light),
-            0 0 15px var(--primary-light);
+            0 0 10px var(--primary-dark),
+            0 0 15px var(--primary-dark);
     }
     to {
         box-shadow: 
             0 0 10px #fff,
-            0 0 20px var(--primary-light),
-            0 0 30px var(--primary-light);
+            0 0 20px var(--primary-dark),
+            0 0 30px var(--primary-dark);
     }
 }
 
