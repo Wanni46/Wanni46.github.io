@@ -1,0 +1,33 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Template Forum</title>
+    <link rel="stylesheet" href="Styles/cvdesign.css">
+    <script src="JS/cvdesign.js"></script>
+</head>
+<body>
+    <h1>CV Template Forum</h1>
+    <form action="#" method="post" class="cv-forum-form">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="template">Preferred CV Template:</label>
+        <select id="template" name="template">
+            <option value="classic">Classic</option>
+            <option value="modern">Modern</option>
+            <option value="creative">Creative</option>
+        </select>
+
+        <label for="comments">Comments or Suggestions:</label>
+        <textarea id="comments" name="comments" rows="4"></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+    <div id="submitted-email"></div>
+</body>
+</html>

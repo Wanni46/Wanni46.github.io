@@ -1,0 +1,52 @@
+.cv-forum-form {
+    max-width: 500px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 24px rgba(106, 17, 203, 0.08);
+    padding: 32px 24px;
+}
+
+.cv-forum-form label {
+    display: block;
+    margin-top: 18px;
+    font-weight: 500;
+    color: #6a11cb;
+}
+
+.cv-forum-form input,
+.cv-forum-form textarea,
+.cv-forum-form select {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 6px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.cv-forum-form input:focus,
+.cv-forum-form textarea:focus,
+.cv-forum-form select:focus {
+    border-color: #6a11cb;
+    outline: none;
+}
+
+.cv-forum-form button {
+    margin-top: 28px;
+    padding: 12px 0;
+    width: 100%;
+    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.cv-forum-form button:hover {
+    background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
+}
