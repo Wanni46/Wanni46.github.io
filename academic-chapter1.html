@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NOVA Chapter 1 - Academic Excellence | AXSYNTHE GROUP</title>
+    <style>
+      /* Reset and base styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        color: #333;
+        line-height: 1.6;
+        background-color: #f8f9fa;
+      }
+
+      a {
+        text-decoration: none;
+        color: #0066cc;
+      }
+
+      /* Header styles */
+      header {
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: 700;
+        color: #0d2f62;
+      }
+
+      .logo span {
+        color: #2a9df4;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li {
+        margin-left: 30px;
+      }
+
+      nav ul li a {
+        color: #333;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #2a9df4;
+      }
+
+      .mobile-menu {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      /* Breadcrumb */
+      .breadcrumb {
+        padding: 20px 0;
+        background-color: #f0f5ff;
+      }
+
+      .breadcrumb-content {
+        font-size: 14px;
+        color: #666;
+      }
+
+      .breadcrumb-content a {
+        color: #2a9df4;
+      }
+
+      .breadcrumb-content a:hover {
+        text-decoration: underline;
+      }
+
+      /* Hero section */
+      .hero {
+        padding: 80px 0;
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        color: white;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+      }
+
+      .hero p {
+        font-size: 18px;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      /* Main Content */
+      .main-content {
+        padding: 80px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-title h2 {
+        font-size: 36px;
+        color: #0d2f62;
+        margin-bottom: 15px;
+      }
+
+      .section-title p {
+        font-size: 16px;
+        color: #666;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      /* Team Section */
+      .team-section {
+        padding: 80px 0;
+        background-color: #f0f5ff;
+      }
+
+      .team-intro {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .team-intro h3 {
+        font-size: 28px;
+        color: #0d2f62;
+        margin-bottom: 15px;
+      }
+
+      .team-intro p {
+        font-size: 16px;
+        color: #666;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      /* Team Cards */
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-bottom: 80px;
+      }
+
+      .team-card {
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .team-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .team-image {
+        width: 100%;
+        height: 250px;
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 60px;
+      }
+
+      .team-info {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .team-name {
+        font-size: 18px;
+        font-weight: 600;
+        color: #0d2f62;
+        margin-bottom: 5px;
+      }
+
+      .team-post {
+        font-size: 14px;
+        color: #2a9df4;
+        margin-bottom: 5px;
+      }
+
+      .team-degree {
+        font-size: 13px;
+        color: #999;
+      }
+
+      /* Tutor Cards */
+      .tutor-title {
+        font-size: 24px;
+        color: #0d2f62;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .tutor-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .tutor-card {
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .tutor-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .tutor-image {
+        width: 100%;
+        height: 250px;
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 60px;
+      }
+
+      .tutor-info {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .tutor-name {
+        font-size: 18px;
+        font-weight: 600;
+        color: #0d2f62;
+        margin-bottom: 10px;
+      }
+
+      .tutor-degree {
+        font-size: 13px;
+        color: #999;
+      }
+
+      /* About NOVA Section */
+      .about-nova {
+        padding: 80px 0;
+      }
+
+      .about-nova h2 {
+        font-size: 32px;
+        color: #0d2f62;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .about-nova-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+      }
+
+      .about-nova-item {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .about-nova-item h3 {
+        font-size: 20px;
+        color: #0d2f62;
+        margin-bottom: 15px;
+      }
+
+      .about-nova-item p {
+        color: #666;
+        font-size: 14px;
+        line-height: 1.8;
+      }
+
+      /* Resources Section */
+      .resources-section {
+        padding: 80px 0;
+        background-color: #f0f5ff;
+      }
+
+      .resources-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .resource-card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 40px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .resource-icon {
+        font-size: 48px;
+        margin-bottom: 20px;
+      }
+
+      .resource-card h3 {
+        font-size: 22px;
+        color: #0d2f62;
+        margin-bottom: 20px;
+      }
+
+      .resource-card p {
+        color: #666;
+        margin-bottom: 25px;
+        font-size: 14px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: #2a9df4;
+        color: white;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: background-color 0.3s;
+        border: none;
+        cursor: pointer;
+        margin: 5px;
+      }
+
+      .btn:hover {
+        background-color: #0d86e0;
+      }
+
+      .btn-download {
+        background-color: #f59e0b;
+      }
+
+      .btn-download:hover {
+        background-color: #d97706;
+      }
+
+      .btn-drive {
+        background-color: #10b981;
+      }
+
+      .btn-drive:hover {
+        background-color: #059669;
+      }
+
+      /* Videos Section */
+      .videos-section {
+        padding: 80px 0;
+      }
+
+      .video-container {
+        margin-bottom: 40px;
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .video-header {
+        background-color: #0d2f62;
+        padding: 20px 30px;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .video-header:hover {
+        background-color: #1e40af;
+      }
+
+      .video-title {
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      .dropdown-icon {
+        font-size: 24px;
+        transition: transform 0.3s;
+      }
+
+      .video-header.active .dropdown-icon {
+        transform: rotate(180deg);
+      }
+
+      .video-content {
+        display: none;
+        padding: 30px;
+      }
+
+      .video-content.active {
+        display: block;
+      }
+
+      .video-embed {
+        width: 100%;
+        height: 500px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+
+      .video-description {
+        color: #666;
+        font-size: 14px;
+        line-height: 1.8;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #0d2f62;
+        color: white;
+        padding: 40px 0;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+      }
+
+      .footer-column h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        color: #2a9df4;
+      }
+
+      .footer-column ul {
+        list-style: none;
+      }
+
+      .footer-column ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer-column ul li a {
+        color: #ddd;
+        transition: color 0.3s;
+      }
+
+      .footer-column ul li a:hover {
+        color: #2a9df4;
+      }
+
+      .copyright {
+        margin-top: 40px;
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 12px;
+      }
+
+      /* Mobile Navigation */
+      .mobile-nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(13, 47, 98, 0.95);
+        z-index: 999;
+        padding-top: 80px;
+      }
+      
+      .mobile-nav.active {
+        display: block;
+      }
+      
+      .mobile-nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        list-style: none;
+      }
+      
+      .mobile-nav ul li {
+        margin-bottom: 20px;
+      }
+      
+      .mobile-nav ul li a {
+        color: white;
+        font-size: 24px;
+        font-weight: 500;
+      }
+      
+      .close-menu {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        nav ul {
+          display: none;
+        }
+
+        .mobile-menu {
+          display: block;
+        }
+
+        .hero h1 {
+          font-size: 36px;
+        }
+
+        .video-embed {
+          height: 300px;
+        }
+
+        .resource-card {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container nav-container">
+        <a href="index.html" class="logo">AX<span>SYNTHE</span> GROUP</a>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="edvana.html">Edvana</a></li>
+            <li><a href="edvana-academic.html">Academic Excellence</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="mobile-menu">☰</div>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+      <div class="close-menu">✕</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="edvana.html">Edvana</a></li>
+        <li><a href="edvana-academic.html">Academic Excellence</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <div class="container breadcrumb-content">
+        <a href="index.html">Home</a> / <a href="edvana.html">Edvana</a> / <a href="edvana-academic.html">Academic Excellence</a> / <span>NOVA Chapter 1</span>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-content">
+        <h1>NOVA - Chapter 1</h1>
+        <p>Complete O/L Mathematics Boot Camp with comprehensive study materials and expert guidance</p>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+      <div class="container">
+        <div class="team-intro">
+          <h3>Meet Team NOVA</h3>
+          <p>Our dedicated team of experts and experienced tutors are committed to providing you with the best learning experience. Led by industry professionals and supported by certified instructors.</p>
+        </div>
+
+        <!-- Company Members -->
+        <div class="section-title">
+          <h2>Leadership Team</h2>
+        </div>
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-image">👨‍💼</div>
+            <div class="team-info">
+              <div class="team-name">Pasindu D. Wanninayake</div>
+              <div class="team-post">CEO & Founder</div>
+              <div class="team-degree">B.Sc (Hons) Computer Engineering (Undergraduate)</div>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-image">👩‍💼</div>
+            <div class="team-info">
+              <div class="team-name">Ishanka Hirushan</div>
+              <div class="team-post">Chief Technology Officer</div>
+              <div class="team-degree">B.Sc (Hons) Computer Engineering (Undergraduate)</div>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-image">👨‍💼</div>
+            <div class="team-info">
+              <div class="team-name">Jithma Aththanayaka</div>
+              <div class="team-post">Chief Operations Officer</div>
+              <div class="team-degree">B.Sc (Hons) Computer Engineering (Undergraduate)</div>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-image">👩‍💼</div>
+            <div class="team-info">
+              <div class="team-name">Kasun Mahela</div>
+              <div class="team-post">Technology Officer</div>
+              <div class="team-degree">B.Sc (Hons) Computer Engineering (Undergraduate)</div>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-image">👨‍💼</div>
+            <div class="team-info">
+              <div class="team-name">Uvindu Akash</div>
+              <div class="team-post">Operations Officer</div>
+              <div class="team-degree">B.Sc (Hons) Computer Engineering (Undergraduate)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tutors Section -->
+        <div class="section-title" style="margin-top: 60px;">
+          <h2>NOVA Tutors</h2>
+        </div>
+        <div class="tutor-grid">
+          <div class="tutor-card">
+            <div class="tutor-image">👨‍🏫</div>
+            <div class="tutor-info">
+              <div class="tutor-name">Chanaka Dissanayaka</div>
+              <div class="tutor-degree">B.Sc (Hons) Electrical Engineering (Undergraduate)</div>
+            </div>
+          </div>
+
+          <div class="tutor-card">
+            <div class="tutor-image">👩‍🏫</div>
+            <div class="tutor-info">
+              <div class="tutor-name">Dinushka Udayanga</div>
+              <div class="tutor-degree">B.Sc (Hons) Civil Engineering (Undergraduate)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About NOVA Section -->
+    <section class="about-nova">
+      <div class="container">
+        <h2>About NOVA Mathematics Camp</h2>
+        
+        <div class="about-nova-content">
+          <div class="about-nova-item">
+            <h3>📍 Location & Setup</h3>
+            <p>NOVA operates from our state-of-the-art learning center in Colombo, Sri Lanka. Our facility is equipped with modern teaching technology, spacious classrooms, and dedicated study areas to ensure an optimal learning environment for all students.</p>
+          </div>
+
+          <div class="about-nova-item">
+            <h3>🎓 Teaching Methods</h3>
+            <p>We employ a blend of traditional and modern teaching methodologies including interactive lectures, collaborative problem-solving sessions, practical demonstrations, and technology-enhanced learning. Each student receives personalized attention through small class sizes and one-on-one guidance sessions.</p>
+          </div>
+
+          <div class="about-nova-item">
+            <h3>💻 Classroom Technology</h3>
+            <p>Our classrooms are equipped with Smart Boards, interactive displays, and tablets for students. We leverage online platforms for remote sessions, assignment submissions, and progress tracking. Hybrid classes are available to accommodate students' schedules.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="resources-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Study Resources</h2>
+          <p>Access comprehensive study materials and marking schemes for your examination preparation</p>
+        </div>
+
+        <div class="resources-grid">
+          <!-- Past Papers -->
+          <div class="resource-card">
+            <div class="resource-icon">📄</div>
+            <h3>Past Papers</h3>
+            <p>Access comprehensive collection of past examination papers from previous years. Practice with authentic exam questions and familiarize yourself with the exam format.</p>
+            <a href="#" class="btn btn-download">📥 Download</a>
+          </div>
+
+          <!-- Marking Scheme -->
+          <div class="resource-card">
+            <div class="resource-icon">📋</div>
+            <h3>Marking Scheme</h3>
+            <p>Get detailed marking schemes and answer guides for all past papers. Understand the correct answers and marking criteria used by examiners.</p>
+            <a href="#" class="btn btn-download">📥 Download</a>
+            <a href="#" class="btn btn-drive">🔗 View on Drive</a>
+          </div>
+
+          <!-- Mark Sheet -->
+          <div class="resource-card">
+            <div class="resource-icon">📊</div>
+            <h3>Mark Sheet</h3>
+            <p>Track your progress with our comprehensive mark sheet template. Record your scores and monitor your improvement throughout your preparation.</p>
+            <a href="#" class="btn btn-download">📥 Download</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section class="videos-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Video Tutorials</h2>
+          <p>Learn from expert instructors through comprehensive video tutorials</p>
+        </div>
+
+        <!-- Video 1 -->
+        <div class="video-container">
+          <div class="video-header" onclick="toggleVideo(this)">
+            <span class="video-title">Module 1: Algebra Fundamentals</span>
+            <span class="dropdown-icon">▼</span>
+          </div>
+          <div class="video-content">
+            <iframe class="video-embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+            <div class="video-description">
+              <strong>Description:</strong> In this comprehensive module, we cover the fundamentals of algebra including variables, expressions, equations, and solving linear equations. Learn step-by-step techniques to master algebraic concepts.
+            </div>
+          </div>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="video-container">
+          <div class="video-header" onclick="toggleVideo(this)">
+            <span class="video-title">Module 2: Geometry & Trigonometry</span>
+            <span class="dropdown-icon">▼</span>
+          </div>
+          <div class="video-content">
+            <iframe class="video-embed" src="https://www.youtube.com/embed/jNQXAC9IVRw" frameborder="0" allowfullscreen></iframe>
+            <div class="video-description">
+              <strong>Description:</strong> Explore the fascinating world of geometry and trigonometry. Learn about angles, triangles, circles, and trigonometric functions with practical examples and visual demonstrations.
+            </div>
+          </div>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="video-container">
+          <div class="video-header" onclick="toggleVideo(this)">
+            <span class="video-title">Module 3: Calculus Introduction</span>
+            <span class="dropdown-icon">▼</span>
+          </div>
+          <div class="video-content">
+            <iframe class="video-embed" src="https://www.youtube.com/embed/9bZkp7q19f0" frameborder="0" allowfullscreen></iframe>
+            <div class="video-description">
+              <strong>Description:</strong> Begin your journey into calculus with this introductory module. Understand limits, derivatives, and integration with clear explanations and worked examples.
+            </div>
+          </div>
+        </div>
+
+        <!-- Video 4 -->
+        <div class="video-container">
+          <div class="video-header" onclick="toggleVideo(this)">
+            <span class="video-title">Module 4: Statistics & Probability</span>
+            <span class="dropdown-icon">▼</span>
+          </div>
+          <div class="video-content">
+            <iframe class="video-embed" src="https://www.youtube.com/embed/HVlzqzTTbF0" frameborder="0" allowfullscreen></iframe>
+            <div class="video-description">
+              <strong>Description:</strong> Master statistics and probability concepts essential for O/L examinations. Learn data analysis, distributions, and probability theory with real-world applications.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>AXSYNTHE Group</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Edvana</h3>
+            <ul>
+              <li><a href="edvana.html">Courses</a></li>
+              <li><a href="edvana-academic.html">Academic Excellence</a></li>
+              <li><a href="academic-chapter1.html">NOVA Chapter 1</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Resources</h3>
+            <ul>
+              <li><a href="#">Learning Materials</a></li>
+              <li><a href="#">Study Guides</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Connect with Us</h3>
+            <ul>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">LinkedIn</a></li>
+              <li><a href="#">Instagram</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2025 NOVA Mathematics Camp by AXSYNTHE Group PVT (Ltd). All rights reserved. | Last Updated: 2025-11-19 05:46:06 UTC | Author: Wanni46</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      document.querySelector('.mobile-menu').addEventListener('click', function() {
+        document.querySelector('.mobile-nav').classList.add('active');
+      });
+      
+      document.querySelector('.close-menu').addEventListener('click', function() {
+        document.querySelector('.mobile-nav').classList.remove('active');
+      });
+
+      // Video toggle functionality
+      function toggleVideo(element) {
+        const videoContent = element.nextElementSibling;
+        const isActive = videoContent.classList.contains('active');
+        
+        // Close all other videos
+        document.querySelectorAll('.video-content').forEach(content => {
+          content.classList.remove('active');
+        });
+        document.querySelectorAll('.video-header').forEach(header => {
+          header.classList.remove('active');
+        });
+        
+        // Toggle current video
+        if (!isActive) {
+          videoContent.classList.add('active');
+          element.classList.add('active');
+        }
+      }
+    </script>
+  </body>
+</html>
