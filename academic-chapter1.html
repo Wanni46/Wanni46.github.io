@@ -275,7 +275,7 @@
       color: #999;
     }
 
-    /* Tutor Cards - 3 per row */
+    /* Tutor Cards - centered in 1 row */
     .tutor-title {
       font-size: 24px;
       color: #0d2f62;
@@ -284,9 +284,10 @@
     }
 
     .tutor-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      display: flex;
+      justify-content: center;
       gap: 30px;
+      flex-wrap: nowrap;
     }
 
     .tutor-card {
@@ -298,6 +299,9 @@
       text-align: center;
       padding: 4px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 100%;
+      max-width: 300px;
+      flex: 0 1 auto;
     }
 
     .tutor-card::before {
@@ -851,7 +855,7 @@
       }
 
       .tutor-grid {
-        grid-template-columns: repeat(2, 1fr);
+        flex-wrap: wrap;
       }
 
       .resources-grid {
@@ -881,7 +885,12 @@
       }
 
       .tutor-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .tutor-card {
+        max-width: 100%;
       }
 
       .resources-grid {
@@ -952,6 +961,14 @@
       .button-container {
         gap: 8px;
         padding-top: 16px;
+      }
+
+      .tutor-grid {
+        gap: 20px;
+      }
+
+      .tutor-card {
+        max-width: 100%;
       }
     }
   </style>
@@ -1278,7 +1295,7 @@
       </div>
       <div class="copyright">
         <p>&copy; 2025 NOVA Mathematics Camp by AXSYNTHE Group PVT (Ltd). All rights reserved. | Last Updated:
-          2025-11-19 11:15:54 UTC | Author: Wanni46</p>
+          2025-11-19 16:41:02 UTC | Author: Wanni46</p>
       </div>
     </div>
   </footer>
