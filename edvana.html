@@ -140,6 +140,16 @@
         background-color: #0d86e0;
       }
 
+      .btn:disabled {
+        background-color: #9ca3af;
+        cursor: not-allowed;
+        opacity: 0.6;
+      }
+
+      .btn:disabled:hover {
+        background-color: #9ca3af;
+      }
+
       /* Section Title */
       .section-title {
         text-align: center;
@@ -234,11 +244,17 @@
         overflow: hidden;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s, box-shadow 0.3s;
+        display: flex;
+        flex-direction: column;
       }
 
-      .course-card:hover {
+      .course-card:hover:not(.disabled) {
         transform: translateY(-10px);
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .course-card.disabled {
+        opacity: 0.8;
       }
 
       .course-header {
@@ -246,6 +262,11 @@
         padding: 30px;
         color: white;
         text-align: center;
+        position: relative;
+      }
+
+      .course-header.disabled {
+        background: linear-gradient(135deg, #9ca3af 0%, #d1d5db 100%);
       }
 
       .course-icon {
@@ -258,14 +279,42 @@
         margin-bottom: 10px;
       }
 
+      .course-header p {
+        font-size: 14px;
+        opacity: 0.9;
+      }
+
+      .course-status {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      .course-status.active {
+        background-color: #10b981;
+      }
+
+      .course-status.tbd {
+        background-color: #ef4444;
+      }
+
       .course-body {
         padding: 25px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
       }
 
       .course-body p {
         color: #666;
         margin-bottom: 15px;
         font-size: 14px;
+        flex-grow: 1;
       }
 
       .course-meta {
@@ -315,41 +364,6 @@
       .feature-card p {
         color: #666;
         font-size: 14px;
-      }
-
-      /* Testimonials Section */
-      .testimonials {
-        padding: 80px 0;
-      }
-
-      .testimonials-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-      }
-
-      .testimonial-card {
-        background-color: white;
-        padding: 30px;
-        border-radius: 10px;
-        border-left: 5px solid #f59e0b;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      .testimonial-text {
-        margin-bottom: 20px;
-        color: #666;
-        font-style: italic;
-      }
-
-      .testimonial-author {
-        font-weight: 600;
-        color: #0d2f62;
-      }
-
-      .testimonial-role {
-        font-size: 13px;
-        color: #999;
       }
 
       /* Stats Section */
@@ -460,6 +474,7 @@
         text-align: center;
         padding-top: 20px;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 12px;
       }
 
       /* Mobile Navigation */
@@ -654,11 +669,13 @@
       <div class="container">
         <div class="section-title">
           <h2>OUR COURSES</h2>
-          <p>Discover our diverse range of learning programs designed for every skill level</p>
+          <p>Discover our diverse range of learning programs designed for every skill level. Only Academic Excellence is currently available!</p>
         </div>
         <div class="courses-grid">
-          <div class="course-card">
-            <div class="course-header">
+          <!-- Digital Skills Bootcamp - TBD -->
+          <div class="course-card disabled">
+            <div class="course-header disabled">
+              <div class="course-status tbd">TBD</div>
               <div class="course-icon">💻</div>
               <h3>Digital Skills Bootcamp</h3>
               <p>Tech skills for the modern era</p>
@@ -669,12 +686,14 @@
                 <span>📅 12 Weeks</span>
                 <span>📍 Online/Offline</span>
               </div>
-              <a href="contact.html" class="btn">Enroll Now</a>
+              <button class="btn btn-secondary" disabled>Coming Soon</button>
             </div>
           </div>
 
+          <!-- Academic Excellence - ACTIVE -->
           <div class="course-card">
             <div class="course-header">
+              <div class="course-status active">✓ ACTIVE</div>
               <div class="course-icon">📖</div>
               <h3>Academic Excellence</h3>
               <p>Excel in your studies</p>
@@ -685,12 +704,14 @@
                 <span>📅 Ongoing</span>
                 <span>📍 Online/Offline</span>
               </div>
-              <a href="edvana-academic.html" class="btn">Enroll Now</a>
+              <a href="edvana-academic.html" class="btn btn-secondary">Enroll Now</a>
             </div>
           </div>
 
-          <div class="course-card">
-            <div class="course-header">
+          <!-- Creative Arts Program - TBD -->
+          <div class="course-card disabled">
+            <div class="course-header disabled">
+              <div class="course-status tbd">TBD</div>
               <div class="course-icon">🎨</div>
               <h3>Creative Arts Program</h3>
               <p>Unleash your creative potential</p>
@@ -701,12 +722,14 @@
                 <span>📅 6-16 Weeks</span>
                 <span>📍 Online/Offline</span>
               </div>
-              <a href="contact.html" class="btn">Enroll Now</a>
+              <button class="btn btn-secondary" disabled>Coming Soon</button>
             </div>
           </div>
 
-          <div class="course-card">
-            <div class="course-header">
+          <!-- Language Programs - TBD -->
+          <div class="course-card disabled">
+            <div class="course-header disabled">
+              <div class="course-status tbd">TBD</div>
               <div class="course-icon">🌍</div>
               <h3>Language Programs</h3>
               <p>Master new languages</p>
@@ -714,10 +737,10 @@
             <div class="course-body">
               <p>Interactive language courses in English, Spanish, Mandarin, and other languages with certified instructors.</p>
               <div class="course-meta">
-                <span>📅  8-24 Weeks</span>
+                <span>📅 8-24 Weeks</span>
                 <span>📍 Online/Offline</span>
               </div>
-              <a href="contact.html" class="btn">Enroll Now</a>
+              <button class="btn btn-secondary" disabled>Coming Soon</button>
             </div>
           </div>
         </div>
@@ -729,11 +752,11 @@
       <div class="container">
         <div class="stats-grid">
           <div class="stat-item">
-            <h3>5000+</h3>
+            <h3>80+</h3>
             <p>Students Trained</p>
           </div>
           <div class="stat-item">
-            <h3>50+</h3>
+            <h3>1+</h3>
             <p>Active Courses</p>
           </div>
           <div class="stat-item">
@@ -741,85 +764,8 @@
             <p>Success Rate</p>
           </div>
           <div class="stat-item">
-            <h3>25+</h3>
+            <h3>7+</h3>
             <p>Expert Instructors</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-      <div class="container">
-        <div class="section-title">
-          <h2>STUDENT SUCCESS STORIES</h2>
-          <p>Hear from learners who transformed their careers through Edvana</p>
-        </div>
-        <div class="testimonials-grid">
-          <div class="testimonial-card">
-            <p class="testimonial-text">"Edvana's courses completely transformed my career. The instructors were incredibly knowledgeable and supportive. I landed my dream job within 3 months of completing the course!"</p>
-            <p class="testimonial-author">Aisha Mohamed</p>
-            <p class="testimonial-role">Digital Marketing Specialist</p>
-          </div>
-          <div class="testimonial-card">
-            <p class="testimonial-text">"The flexibility and quality of content at Edvana was exactly what I needed. I was able to balance my studies while working full-time. Highly recommended!"</p>
-            <p class="testimonial-author">Rajesh Kumar</p>
-            <p class="testimonial-role">Software Developer</p>
-          </div>
-          <div class="testimonial-card">
-            <p class="testimonial-text">"My grades improved dramatically after enrolling in Edvana's Academic Excellence program. The personalized attention from tutors made a huge difference."</p>
-            <p class="testimonial-author">Emma Wilson</p>
-            <p class="testimonial-role">University Student</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact">
-      <div class="container">
-        <div class="section-title">
-          <h2>GET IN TOUCH</h2>
-          <p>Have questions? Let's discuss how Edvana can help you achieve your learning goals</p>
-        </div>
-        <div class="contact-content">
-          <div class="contact-info">
-            <h3>CONTACT INFORMATION</h3>
-            <p><i>📍</i> Prabuddha, Warawewa, 60739</p>
-            <p><i>📞</i> +94 76 391 8301</p>
-            <p><i>✉️</i> contact@edvana.com</p>
-            <h3 style="margin-top: 30px;">Working Hours</h3>
-            <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
-            <p>Saturday: 9:00 AM - 2:00 PM</p>
-            <p>Sunday: Closed</p>
-          </div>
-          <div class="contact-form">
-            <form action="https://formsubmit.co/contact@edvana.com" method="POST">
-              <input type="hidden" name="_captcha" value="false">
-              <input type="hidden" name="_next" value="https://axsynthegroup.me/thankyou.html">
-          
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required />
-              </div>
-          
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required />
-              </div>
-          
-              <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" name="subject" required />
-              </div>
-          
-              <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" required></textarea>
-              </div>
-          
-              <button type="submit" class="btn">Send Message</button>
-            </form>
           </div>
         </div>
       </div>
@@ -842,7 +788,7 @@
             <ul>
               <li><a href="#courses">Courses</a></li>
               <li><a href="#courses">Browse Programs</a></li>
-              <li><a href="contact.html">Enroll Now</a></li>
+              <li><a href="edvana-academic.html">Academic Excellence</a></li>
             </ul>
           </div>
           <div class="footer-column">
@@ -864,7 +810,7 @@
           </div>
         </div>
         <div class="copyright">
-          <p>&copy; 2025 Edvana by AXSYNTHE Group PVT (Ltd). All rights reserved.</p>
+          <p>&copy; 2025 Edvana by AXSYNTHE Group PVT (Ltd). All rights reserved. | Last Updated: 2025-11-19 04:38:37 UTC | Author: Wanni46</p>
         </div>
       </div>
     </footer>
