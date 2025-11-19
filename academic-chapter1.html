@@ -437,71 +437,162 @@
       /* Resources Section */
       .resources-section {
         padding: 80px 0;
-        background-color: #f0f5ff;
+        background-color: #f8f9fa;
       }
 
       .resources-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 40px;
+        margin-top: 50px;
       }
 
+      /* Resource Card - Magazine Style */
       .resource-card {
-        background-color: white;
-        border-radius: 10px;
-        padding: 40px;
-        text-align: center;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        background: white;
+        border: 3px solid #333;
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
       }
 
-      .resource-icon {
-        font-size: 48px;
-        margin-bottom: 20px;
+      .resource-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+        border-color: #2a9df4;
       }
 
-      .resource-card h3 {
-        font-size: 22px;
-        color: #0d2f62;
-        margin-bottom: 20px;
+      /* Document Preview Section */
+      .doc-preview-section {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 3/4;
+        background: linear-gradient(135deg, #f5f7fa 0%, #e3e8ef 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-bottom: 3px solid #333;
       }
 
-      .resource-card p {
-        color: #666;
-        margin-bottom: 25px;
-        font-size: 14px;
+      .doc-preview-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
       }
 
-      .btn {
-        display: inline-block;
-        padding: 12px 30px;
-        background-color: #2a9df4;
-        color: white;
-        border-radius: 5px;
-        font-weight: 600;
-        transition: background-color 0.3s;
-        border: none;
-        cursor: pointer;
-        margin: 5px;
-      }
-
-      .btn:hover {
-        background-color: #0d86e0;
+      /* Button Container */
+      .button-container {
+        padding: 20px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: stretch;
+        align-items: stretch;
+        flex-grow: 1;
       }
 
       .btn-download {
-        background-color: #f59e0b;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 16px 24px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        cursor: pointer;
+        border: none;
+        transition: all 0.3s ease;
+        flex: 1;
+        min-width: 120px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        position: relative;
+        overflow: hidden;
       }
 
-      .btn-download:hover {
-        background-color: #d97706;
+      .btn-download::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.15);
+        transition: left 0.3s ease;
+        z-index: 0;
       }
 
+      .btn-download:hover::before {
+        left: 100%;
+      }
+
+      .btn-download span {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      /* PDF Download - Blue */
+      .btn-pdf-download {
+        background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
+        color: white;
+        box-shadow: 0 4px 10px rgba(0, 102, 204, 0.3);
+      }
+
+      .btn-pdf-download:hover {
+        background: linear-gradient(135deg, #0052A3 0%, #003d7a 100%);
+        box-shadow: 0 6px 16px rgba(0, 102, 204, 0.5);
+        transform: translateY(-2px);
+      }
+
+      /* Drive - Google Blue */
       .btn-drive {
-        background-color: #10b981;
+        background: linear-gradient(135deg, #1F7EC3 0%, #1565C0 100%);
+        color: white;
+        box-shadow: 0 4px 10px rgba(31, 126, 195, 0.3);
       }
 
       .btn-drive:hover {
-        background-color: #059669;
+        background: linear-gradient(135deg, #1565C0 0%, #0D47A1 100%);
+        box-shadow: 0 6px 16px rgba(31, 126, 195, 0.5);
+        transform: translateY(-2px);
+      }
+
+      /* XLS Download - Green */
+      .btn-xls-download {
+        background: linear-gradient(135deg, #00B050 0%, #009a3c 100%);
+        color: white;
+        box-shadow: 0 4px 10px rgba(0, 176, 80, 0.3);
+      }
+
+      .btn-xls-download:hover {
+        background: linear-gradient(135deg, #009a3c 0%, #006b2d 100%);
+        box-shadow: 0 6px 16px rgba(0, 176, 80, 0.5);
+        transform: translateY(-2px);
+      }
+
+      /* Download Icon Animation */
+      .download-icon {
+        font-size: 18px;
+        transition: transform 0.3s ease;
+      }
+
+      .btn-download:hover .download-icon {
+        animation: bounce-down 0.6s ease infinite;
+      }
+
+      @keyframes bounce-down {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(6px); }
       }
 
       /* Videos Section */
@@ -663,6 +754,10 @@
         .tutor-grid {
           grid-template-columns: repeat(2, 1fr);
         }
+
+        .resources-grid {
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
       }
 
       @media (max-width: 768px) {
@@ -682,16 +777,26 @@
           height: 300px;
         }
 
-        .resource-card {
-          padding: 20px;
-        }
-
         .team-grid {
           grid-template-columns: 1fr;
         }
 
         .tutor-grid {
           grid-template-columns: 1fr;
+        }
+
+        .resources-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .button-container {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .btn-download {
+          width: 100%;
+          min-width: unset;
         }
       }
     </style>
@@ -806,7 +911,7 @@
         </div>
         <div class="tutor-grid">
           <div class="tutor-card">
-            <img src="https://via.placeholder.com/400x300?text=Chanaka+Dissanayaka" alt="Chanaka Dissanayaka">
+            <img src="https://github.com/Wanni46.png" alt="Chanaka Dissanayaka">
             <div class="tutor-info">
               <div class="tutor-name">Chanaka Dissanayaka</div>
               <div class="tutor-degree">B.Sc (Hons) Electrical Engineering (Undergraduate)</div>
@@ -814,35 +919,11 @@
           </div>
 
           <div class="tutor-card">
-            <img src="https://via.placeholder.com/400x300?text=Dinushka+Udayanga" alt="Dinushka Udayanga">
+            <img src="https://github.com/IshankaHirushan.png" alt="Dinushka Udayanga">
             <div class="tutor-info">
               <div class="tutor-name">Dinushka Udayanga</div>
               <div class="tutor-degree">B.Sc (Hons) Civil Engineering (Undergraduate)</div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About NOVA Section -->
-    <section class="about-nova">
-      <div class="container">
-        <h2>About NOVA Mathematics Camp</h2>
-        
-        <div class="about-nova-content">
-          <div class="about-nova-item">
-            <h3>📍 Location & Setup</h3>
-            <p>NOVA operates from our state-of-the-art learning center in Colombo, Sri Lanka. Our facility is equipped with modern teaching technology, spacious classrooms, and dedicated study areas to ensure an optimal learning environment for all students.</p>
-          </div>
-
-          <div class="about-nova-item">
-            <h3>🎓 Teaching Methods</h3>
-            <p>We employ a blend of traditional and modern teaching methodologies including interactive lectures, collaborative problem-solving sessions, practical demonstrations, and technology-enhanced learning. Each student receives personalized attention through small class sizes and one-on-one guidance sessions.</p>
-          </div>
-
-          <div class="about-nova-item">
-            <h3>💻 Classroom Technology</h3>
-            <p>Our classrooms are equipped with Smart Boards, interactive displays, and tablets for students. We leverage online platforms for remote sessions, assignment submissions, and progress tracking. Hybrid classes are available to accommodate students' schedules.</p>
           </div>
         </div>
       </div>
@@ -857,29 +938,55 @@
         </div>
 
         <div class="resources-grid">
-          <!-- Past Papers -->
+          <!-- Past Papers Card -->
           <div class="resource-card">
-            <div class="resource-icon">📄</div>
-            <h3>Past Papers</h3>
-            <p>Access comprehensive collection of past examination papers from previous years. Practice with authentic exam questions and familiarize yourself with the exam format.</p>
-            <a href="#" class="btn btn-download">📥 Download</a>
+            <div class="doc-preview-section">
+              <img src="https://github.com/Wanni46/Wanni46.github.io/blob/main/assets/images/Paper.png" alt="Past Papers" class="doc-preview-image">
+            </div>
+            <div class="button-container">
+              <a href="https://raw.githubusercontent.com/Wanni46/NOVA-Resources/main/resources/past-papers.pdf" class="btn-download btn-pdf-download" download>
+                <span>
+                  <span class="download-icon">⬇️</span>
+                  Download
+                </span>
+              </a>
+            </div>
           </div>
 
-          <!-- Marking Scheme -->
+          <!-- Marking Scheme Card -->
           <div class="resource-card">
-            <div class="resource-icon">📋</div>
-            <h3>Marking Scheme</h3>
-            <p>Get detailed marking schemes and answer guides for all past papers. Understand the correct answers and marking criteria used by examiners.</p>
-            <a href="#" class="btn btn-download">📥 Download</a>
-            <a href="#" class="btn btn-drive">🔗 View on Drive</a>
+            <div class="doc-preview-section">
+              <img src="https://github.com/Wanni46/Wanni46.github.io/blob/main/assets/images/Paper.png" alt="Marking Scheme" class="doc-preview-image">
+            </div>
+            <div class="button-container">
+              <a href="https://raw.githubusercontent.com/Wanni46/NOVA-Resources/main/resources/marking-scheme.pdf" class="btn-download btn-pdf-download" download>
+                <span>
+                  <span class="download-icon">⬇️</span>
+                  Download
+                </span>
+              </a>
+              <a href="https://drive.google.com/your-drive-link" class="btn-download btn-drive" target="_blank">
+                <span>
+                  <span class="download-icon">🔗</span>
+                  Drive
+                </span>
+              </a>
+            </div>
           </div>
 
-          <!-- Mark Sheet -->
+          <!-- Mark Sheet Card -->
           <div class="resource-card">
-            <div class="resource-icon">📊</div>
-            <h3>Mark Sheet</h3>
-            <p>Track your progress with our comprehensive mark sheet template. Record your scores and monitor your improvement throughout your preparation.</p>
-            <a href="#" class="btn btn-download">📥 Download</a>
+            <div class="doc-preview-section">
+              <img src="https://github.com/Wanni46/Wanni46.github.io/blob/main/assets/images/Paper.png" alt="Mark Sheet" class="doc-preview-image">
+            </div>
+            <div class="button-container">
+              <a href="https://raw.githubusercontent.com/Wanni46/NOVA-Resources/main/resources/mark-sheet.xlsx" class="btn-download btn-xls-download" download>
+                <span>
+                  <span class="download-icon">⬇️</span>
+                  Download
+                </span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -968,7 +1075,7 @@
             <ul>
               <li><a href="edvana.html">Courses</a></li>
               <li><a href="edvana-academic.html">Academic Excellence</a></li>
-              <li><a href="academic-chapter1.html">NOVA Chapter 1</a></li>
+              <li><a href="nova-chapter1.html">NOVA Chapter 1</a></li>
             </ul>
           </div>
           <div class="footer-column">
@@ -990,7 +1097,7 @@
           </div>
         </div>
         <div class="copyright">
-          <p>&copy; 2025 NOVA Mathematics Camp by AXSYNTHE Group PVT (Ltd). All rights reserved. | Last Updated: 2025-11-19 06:26:06 UTC | Author: Wanni46</p>
+          <p>&copy; 2025 NOVA Mathematics Camp by AXSYNTHE Group PVT (Ltd). All rights reserved. | Last Updated: 2025-11-19 09:57:11 UTC | Author: Wanni46</p>
         </div>
       </div>
     </footer>
