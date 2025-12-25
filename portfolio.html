@@ -582,6 +582,91 @@
             });
         });
     </script>
+
+    <script>
+(function() {
+  var canvas = document.createElement('canvas');
+  canvas.id = 'snow-canvas';
+  canvas.style.position = 'fixed';
+  canvas.style.top = 0;
+  canvas.style.left = 0;
+  canvas.style.pointerEvents = 'none';
+  canvas.style.zIndex = 9999;
+  document.body.appendChild(canvas);
+
+  var ctx = canvas.getContext('2d');
+  var width = window.innerWidth;
+  var height = window.innerHeight;
+  var numFlakes = 70;
+  var flakes = [];
+
+  function resize() {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+  }
+
+  function Snowflake() {
+    this.x = Math.random() * width;
+    this.y = Math.random() * height;
+    this.radius = Math.random() * 3 + 1;
+    this.speed = Math.random() * 1 + 0.5;
+    this.wind = Math.random() * 1 - 0.5;
+  }
+
+  function createFlakes() {
+    flakes = [];
+    for (var i = 0; i < numFlakes; i++) {
+      flakes.push(new Snowflake());
+    }
+  }
+
+  function drawFlakes() {
+    ctx.clearRect(0, 0, width, height);
+    for (var i = 0; i < flakes.length; i++) {
+      var f = flakes[i];
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(f.x, f.y, f.radius, 0, Math.PI * 2, true);
+      ctx.shadowColor = "rgba(0,90,255,0.6)"; // blueish shadow
+      ctx.shadowBlur = 6;
+      ctx.fillStyle = "white";
+      ctx.fill();
+      ctx.restore();
+    }
+    updateFlakes();
+  }
+
+  function updateFlakes() {
+    for (var i = 0; i < flakes.length; i++) {
+      var f = flakes[i];
+      f.y += f.speed;
+      f.x += f.wind;
+      if (f.y > height) {
+        f.x = Math.random() * width;
+        f.y = 0;
+      }
+      if (f.x > width) {
+        f.x = 0;
+      }
+      if (f.x < 0) {
+        f.x = width;
+      }
+    }
+  }
+
+  function animateSnow() {
+    drawFlakes();
+    requestAnimationFrame(animateSnow);
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+  createFlakes();
+  animateSnow();
+})();
+</script>
 </body>
 
 </html>
