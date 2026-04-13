@@ -1,0 +1,25 @@
+# robots.txt for AXSYNTHE Group Website
+# This file tells search engine bots which pages they can crawl
+
+User-agent: *
+Allow: /
+
+# Allow all standard search engines to crawl the site
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Disallow crawling of unnecessary pages
+Disallow: /assets/
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /*.map$
+
+# Point search engines to sitemap
+Sitemap: https://axsynthegroup.me/sitemap.xml
+
+# Crawl delay (time between requests in seconds)
+# Optional: specify how often bots should visit
+Crawl-delay: 1
